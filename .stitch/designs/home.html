@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Editorial Portfolio | UX Designer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error": "#9e3f4e",
+                      "surface": "#f9f9f9",
+                      "inverse-primary": "#6889ff",
+                      "on-primary-container": "#0043cd",
+                      "surface-variant": "#dde4e5",
+                      "primary-fixed": "#dce1ff",
+                      "surface-dim": "#d4dbdd",
+                      "secondary-fixed": "#e5e2e1",
+                      "tertiary": "#635b77",
+                      "on-surface-variant": "#5a6061",
+                      "on-tertiary-container": "#554e69",
+                      "primary-fixed-dim": "#c9d2ff",
+                      "surface-tint": "#004dea",
+                      "surface-container": "#ebeeef",
+                      "inverse-on-surface": "#9c9d9d",
+                      "on-primary-fixed": "#0033a2",
+                      "surface-container-highest": "#dde4e5",
+                      "error-container": "#ff8b9a",
+                      "secondary-dim": "#545353",
+                      "surface-container-high": "#e4e9ea",
+                      "on-secondary-container": "#525151",
+                      "tertiary-container": "#e9ddff",
+                      "on-tertiary-fixed": "#433b56",
+                      "surface-container-low": "#f2f4f4",
+                      "on-primary": "#f8f7ff",
+                      "surface-bright": "#f9f9f9",
+                      "on-background": "#2d3435",
+                      "on-error": "#fff7f7",
+                      "on-primary-fixed-variant": "#004be3",
+                      "tertiary-fixed": "#e9ddff",
+                      "on-secondary-fixed-variant": "#5c5b5b",
+                      "outline": "#757c7d",
+                      "on-tertiary-fixed-variant": "#5f5773",
+                      "on-secondary-fixed": "#403f3f",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error-container": "#782232",
+                      "outline-variant": "#adb3b4",
+                      "on-secondary": "#fbf8f8",
+                      "error-dim": "#4f0116",
+                      "on-surface": "#2d3435",
+                      "on-tertiary": "#fdf7ff",
+                      "tertiary-dim": "#574f6a",
+                      "background": "#f9f9f9",
+                      "secondary-fixed-dim": "#d6d4d3",
+                      "primary-dim": "#0043ce",
+                      "primary": "#004dea",
+                      "secondary-container": "#e5e2e1",
+                      "primary-container": "#dce1ff",
+                      "tertiary-fixed-dim": "#dacff0",
+                      "secondary": "#605f5f",
+                      "inverse-surface": "#0c0f0f"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Newsreader"],
+                      "label": ["Manrope"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(249, 249, 249, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(173, 179, 180, 0.15);
+        }
+        .ambient-shadow {
+            box-shadow: 0 24px 48px rgba(45, 52, 53, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 glass-nav">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-6">
+<span class="font-headline font-black text-xl text-on-surface tracking-tight">The Editorial Portfolio</span>
+<div class="hidden md:flex items-center gap-10">
+<a class="font-headline font-bold tracking-tight uppercase text-xs text-primary border-b-2 border-primary pb-1 transition-transform duration-200 scale-102" href="#">Work</a>
+<a class="font-headline font-bold tracking-tight uppercase text-xs text-on-surface hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-headline font-bold tracking-tight uppercase text-xs text-on-surface hover:text-primary transition-colors duration-300" href="#">Contact</a>
+<a class="font-headline font-bold tracking-tight uppercase text-xs text-on-surface hover:text-primary transition-colors duration-300" href="#">Resume</a>
+</div>
+<!-- Mobile Menu Placeholder -->
+<div class="md:hidden">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-40">
+<div class="grid md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-9">
+<span class="font-label text-xs uppercase tracking-widest text-primary font-bold mb-6 block">UX Design &amp; Strategy</span>
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl leading-[1.1] text-on-surface tracking-tighter mb-8">
+                        Crafting intuitive digital experiences that <span class="italic font-body font-normal text-primary">bridge the gap</span> between users and technology.
+                    </h1>
+</div>
+<div class="md:col-span-3 pb-4">
+<p class="font-body text-xl text-on-surface-variant leading-relaxed">
+                        Currently leading design systems at a global fintech startup, focusing on human-centric complexity.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Featured Project -->
+<section class="mb-40">
+<div class="max-w-7xl mx-auto px-8">
+<div class="bg-surface-container-low overflow-hidden flex flex-col md:flex-row items-stretch">
+<div class="w-full md:w-3/5 relative overflow-hidden group">
+<img alt="Featured Project Preview" class="w-full h-[500px] md:h-[700px] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Minimalist mobile app interface displayed on a sleek smartphone resting on a neutral stone surface with soft morning light shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJtfHx9DeG_-aIQmZz8haKwEb9-UBZ1fcuxwK0ei13xDu27nDFokgvwdXcfO1g30ty5vyVXSpSAo9vImATek-E7pRiFUsey7_GBWDk9gWlIKdym4T1dsGGGjBJXySnsVwxtD1C_z9lLibAdar-pUkh40u-RpPqwhGtu97ocMI0ChWfZiYyrFwyn7u0Kuo8xjAUGr2J9Oq9lvFX5zEB8T5PtpWr7CPqHBQxacj9PYiRY-Tu78zgoEffh-nEzQuKJBSCntgRTXmQRI4"/>
+<div class="absolute inset-0 bg-on-surface/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="w-full md:w-2/5 p-12 md:p-20 flex flex-col justify-center">
+<div class="flex gap-2 mb-8">
+<span class="px-3 py-1 bg-surface-variant rounded-full font-label text-[10px] uppercase tracking-wider text-on-surface-variant">Mobile App</span>
+<span class="px-3 py-1 bg-surface-variant rounded-full font-label text-[10px] uppercase tracking-wider text-on-surface-variant">Fintech</span>
+</div>
+<h2 class="font-headline font-bold text-4xl text-on-surface mb-6 leading-tight">Nexus: Simplifying Wealth Management</h2>
+<p class="font-body text-lg text-on-surface-variant mb-12 leading-relaxed">
+                            A complete overhaul of the investment journey, reducing user friction by 40% through intuitive data visualization and predictive AI insights.
+                        </p>
+<div>
+<button class="bg-primary text-on-primary px-8 py-4 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-primary-dim transition-all duration-200 transform hover:scale-102 flex items-center gap-3 w-fit">
+                                View Case Study
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Skills & Stats -->
+<section class="max-w-7xl mx-auto px-8 mb-40">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="md:col-span-2 bg-surface-container-low p-12 flex flex-col justify-between min-h-[320px]">
+<h3 class="font-headline font-bold text-2xl text-on-surface">Design Philosophy</h3>
+<p class="font-body text-2xl italic text-on-surface leading-relaxed max-w-xl">
+                        "Good design is invisible. It anticipates the user's next move before they've even thought to make it."
+                    </p>
+<div class="flex gap-4">
+<span class="font-label text-xs uppercase font-bold text-primary">Empathy</span>
+<span class="font-label text-xs uppercase font-bold text-primary">Clarity</span>
+<span class="font-label text-xs uppercase font-bold text-primary">Precision</span>
+</div>
+</div>
+<div class="bg-primary p-12 flex flex-col justify-between text-on-primary min-h-[320px]">
+<span class="material-symbols-outlined text-4xl" data-weight="fill">deployed_code</span>
+<div>
+<div class="font-headline font-black text-6xl mb-2">8+</div>
+<div class="font-label text-xs uppercase tracking-widest font-bold opacity-80">Years of Experience</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest ghost-border p-12 flex flex-col justify-between min-h-[320px] ambient-shadow">
+<h3 class="font-headline font-bold text-xl text-on-surface">Toolbox</h3>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<span class="font-label text-sm uppercase font-bold text-on-surface-variant">Figma Prototyping</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<span class="font-label text-sm uppercase font-bold text-on-surface-variant">Motion Design</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="w-2 h-2 bg-primary rounded-full"></span>
+<span class="font-label text-sm uppercase font-bold text-on-surface-variant">User Research</span>
+</li>
+</ul>
+</div>
+<div class="md:col-span-2 bg-surface-container-low p-12 flex items-center justify-center">
+<div class="text-center">
+<h3 class="font-headline font-bold text-2xl text-on-surface mb-4">Trusted By</h3>
+<div class="flex flex-wrap justify-center gap-12 opacity-40 grayscale">
+<div class="font-headline font-black text-2xl italic">TECHNO</div>
+<div class="font-headline font-black text-2xl">SOLVE</div>
+<div class="font-headline font-black text-2xl tracking-tighter">URBAN_</div>
+<div class="font-headline font-black text-2xl uppercase">Global.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary CTA -->
+<section class="max-w-7xl mx-auto px-8 mb-20 text-center">
+<h2 class="font-body text-4xl italic text-on-surface mb-8">Ready to start a conversation?</h2>
+<div class="flex justify-center gap-6">
+<button class="bg-on-surface text-surface px-10 py-5 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:opacity-90 transition-all">Get In Touch</button>
+<button class="ghost-border text-on-surface px-10 py-5 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-surface-container-low transition-all">Download CV</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-8 bg-[#f9f9f9] dark:bg-neutral-950 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-headline font-bold text-on-surface">The Editorial Portfolio</span>
+<span class="font-body italic text-lg text-on-surface-variant">© 2024 The Curated Gallery</span>
+</div>
+<div class="flex gap-12">
+<a class="font-body italic text-lg text-on-surface hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="font-body italic text-lg text-on-surface hover:text-primary transition-colors" href="#">Dribbble</a>
+<a class="font-body italic text-lg text-on-surface hover:text-primary transition-colors" href="#">Read.cv</a>
+</div>
+</div>
+</footer>
+</body></html>

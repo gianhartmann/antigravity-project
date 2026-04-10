@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#9e3f4e",
+                    "surface": "#f9f9f9",
+                    "inverse-primary": "#6889ff",
+                    "on-primary-container": "#0043cd",
+                    "surface-variant": "#dde4e5",
+                    "primary-fixed": "#dce1ff",
+                    "surface-dim": "#d4dbdd",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary": "#635b77",
+                    "on-surface-variant": "#5a6061",
+                    "on-tertiary-container": "#554e69",
+                    "primary-fixed-dim": "#c9d2ff",
+                    "surface-tint": "#004dea",
+                    "surface-container": "#ebeeef",
+                    "inverse-on-surface": "#9c9d9d",
+                    "on-primary-fixed": "#0033a2",
+                    "surface-container-highest": "#dde4e5",
+                    "error-container": "#ff8b9a",
+                    "secondary-dim": "#545353",
+                    "surface-container-high": "#e4e9ea",
+                    "on-secondary-container": "#525151",
+                    "tertiary-container": "#e9ddff",
+                    "on-tertiary-fixed": "#433b56",
+                    "surface-container-low": "#f2f4f4",
+                    "on-primary": "#f8f7ff",
+                    "surface-bright": "#f9f9f9",
+                    "on-background": "#2d3435",
+                    "on-error": "#fff7f7",
+                    "on-primary-fixed-variant": "#004be3",
+                    "tertiary-fixed": "#e9ddff",
+                    "on-secondary-fixed-variant": "#5c5b5b",
+                    "outline": "#757c7d",
+                    "on-tertiary-fixed-variant": "#5f5773",
+                    "on-secondary-fixed": "#403f3f",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#782232",
+                    "outline-variant": "#adb3b4",
+                    "on-secondary": "#fbf8f8",
+                    "error-dim": "#4f0116",
+                    "on-surface": "#2d3435",
+                    "on-tertiary": "#fdf7ff",
+                    "tertiary-dim": "#574f6a",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#d6d4d3",
+                    "primary-dim": "#0043ce",
+                    "primary": "#004dea",
+                    "secondary-container": "#e5e2e1",
+                    "primary-container": "#dce1ff",
+                    "tertiary-fixed-dim": "#dacff0",
+                    "secondary": "#605f5f",
+                    "inverse-surface": "#0c0f0f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Newsreader"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            background-color: rgba(249, 249, 249, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .ambient-shadow {
+            box-shadow: 0 24px 48px rgba(45, 52, 53, 0.05);
+        }
+        .ghost-border {
+            outline: 1px solid rgba(173, 179, 180, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f9f9f9]/70 dark:bg-neutral-900/70 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-6">
+<span class="font-['Manrope'] font-black text-xl text-[#2d3435] dark:text-neutral-100 tracking-tight">The Editorial Portfolio</span>
+<div class="hidden md:flex items-center space-x-10">
+<a class="font-['Manrope'] font-bold tracking-tight uppercase text-xs text-[#004dea] dark:text-blue-400 border-b-2 border-[#004dea] pb-1 transition-transform duration-200 scale-102" href="#">Work</a>
+<a class="font-['Manrope'] font-bold tracking-tight uppercase text-xs text-[#2d3435] dark:text-neutral-400 hover:text-[#004dea] transition-colors duration-300" href="#">About</a>
+<a class="font-['Manrope'] font-bold tracking-tight uppercase text-xs text-[#2d3435] dark:text-neutral-400 hover:text-[#004dea] transition-colors duration-300" href="#">Contact</a>
+<a class="font-['Manrope'] font-bold tracking-tight uppercase text-xs text-[#2d3435] dark:text-neutral-400 hover:text-[#004dea] transition-colors duration-300" href="#">Resume</a>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<header class="max-w-7xl mx-auto px-8 mb-24">
+<div class="max-w-3xl">
+<h1 class="font-headline font-bold text-6xl md:text-7xl text-on-surface tracking-tight mb-8 leading-[1.1]">
+                    Selected <span class="font-body italic font-normal text-primary">Case Studies</span> 2022—2024
+                </h1>
+<p class="font-body italic text-2xl text-on-surface-variant leading-relaxed">
+                    A collection of digital experiences centered on intentionality, systemic thinking, and the pursuit of visual excellence.
+                </p>
+</div>
+</header>
+<!-- Gallery Grid -->
+<section class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-20 gap-x-12">
+<!-- Project 01 - Large Layout -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="relative overflow-hidden mb-8 surface-container-low ambient-shadow aspect-[16/9]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Modern minimalist mobile app interface for a high-end fintech brand, featuring clean typography and soft blue gradients on a dark phone mockup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLeBxDFZzWyGxqUg9aFGreDKgFIS3GAYOSumu14IFrVEVaaNWFo1W7HBRcvtagGQKtoEs5mnCR87ZKDmhHZRvwEdrFgBOcnuFAiO7MTuGPyqv5d4lorqYObl-IWDmwWmZ1DQ3QleUICqJe3rmNwFM9VNSHs0N2pE_CE-wdS1KF1vk6T-1kO2jGlcmhWj-PUfD20IBd_WvqNx0oj9gB0NJXZjYRtNH9l4mIXYxSW98Qn7VVGDZ4L6kXNQ47JhxroeiPCW-_SRBlm2I"/>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-surface/90 backdrop-blur-md px-4 py-1.5 rounded-full font-label text-[10px] uppercase font-bold tracking-widest text-on-surface">Mobile App</span>
+</div>
+</div>
+<div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-4">
+<h2 class="font-headline font-bold text-3xl tracking-tight">Lumina Financial</h2>
+<span class="font-label text-xs uppercase tracking-widest text-outline">01 / Case Study</span>
+</div>
+<p class="mt-4 font-body text-xl text-on-surface-variant max-w-2xl italic">
+                        Reimagining the wealth management experience for a new generation of conscious investors.
+                    </p>
+</div>
+<!-- Project 02 - Smaller Layout Asymmetric -->
+<div class="md:col-span-4 group cursor-pointer md:mt-24">
+<div class="relative overflow-hidden mb-8 surface-container-low ambient-shadow aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract web dashboard interface with complex data visualizations, translucent cards, and an elegant sidebar on a soft gray background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNjHnKZoMZH4NN4-kPM6yYTcfOFpVUqUrDKyEnlbtFqJxEYEiFl7wE5sTUtHqeySz9PsaK2-n6q100XraFXy67mhNm-YFUgLodAife_nKoiSyNJOc3gjri3q5AOz0O_BFA4Wiwqdq-AZXmK6eZ4ajqx0_QpCO4xvhws9Oz2odK-vklJJlvhAa9gX3VT_c8PcC0Bwnf9IaGRtjsPLyK2qWBa96-u9hLbfaRNe3Gh9CQkqVqJXFLCeHa3iEAexXijwMNKIrTs6pmazw"/>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-surface/90 backdrop-blur-md px-4 py-1.5 rounded-full font-label text-[10px] uppercase font-bold tracking-widest text-on-surface">Web Platform</span>
+</div>
+</div>
+<h2 class="font-headline font-bold text-2xl tracking-tight">Nexus CRM</h2>
+<p class="mt-3 font-body text-lg text-on-surface-variant italic">
+                        A centralized intelligence hub for global enterprise sales teams.
+                    </p>
+</div>
+<!-- Project 03 - Centered Wide Asymmetric -->
+<div class="md:col-start-2 md:col-span-5 group cursor-pointer">
+<div class="relative overflow-hidden mb-8 surface-container-low ambient-shadow aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up of a design system documentation page showing color tokens, typography scales, and UI components in an editorial layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWlK4tK89mKU2GW8hhAIYFzEgxwhtehfQykjO4lE0pSXcK5EByd-8UZubqi8qDJHQQoV9Ag-f0UexdzG0iq73s98zuJ-VR1whPPvnpeFzSB3PhHg3zX7byZRhcBPFXSGP5PLU_luyBF54Huk_Lq6EGVwCe7tWPZ5rmtE6zc42ghw-_bP1sh9aEk12EWu_crn7SZqIf7J5ZHwCswBYm8h-wl3X8iYGShkKMHNoJ3UAIDrD8Yn7zcn_miorWOQ-jM30YMYABUeQsULM"/>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-surface/90 backdrop-blur-md px-4 py-1.5 rounded-full font-label text-[10px] uppercase font-bold tracking-widest text-on-surface">Research</span>
+</div>
+</div>
+<h2 class="font-headline font-bold text-2xl tracking-tight">The Core System</h2>
+<p class="mt-3 font-body text-lg text-on-surface-variant italic">
+                        Standardizing visual language across 14 product verticals for a unified brand voice.
+                    </p>
+</div>
+<!-- Project 04 - Offset Layout -->
+<div class="md:col-span-5 group cursor-pointer md:mt-[-100px]">
+<div class="relative overflow-hidden mb-8 surface-container-low ambient-shadow aspect-[3/4]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Lifestyle photography of a person using a sleek fitness wearable app in a sunlit gym setting with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhLa3rky1j72sOG9WVVvtjeipdnluvI0er50MXU8fpxYl4shvxv-w1xzRbX_IOPqZ98WlB9iwkSsH9BIXdeNUVg-13t_0_5ljYUsdso9_9ye8gi85L919i5iBqkHmI8KXF4UVJwUS0pHE9012PBaVTzJBS4lPcM73UbyiNwqpgHilBO9cxE7OJMqMvMqoE_W3FG8OsiXDn7VmR4HxdjSmBVcxrxo8Az_9k8cNer-h6onN4FP8oVBc7RHR9G3m9-1e1LO80mmqX4eg"/>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="bg-surface/90 backdrop-blur-md px-4 py-1.5 rounded-full font-label text-[10px] uppercase font-bold tracking-widest text-on-surface">Mobile App</span>
+</div>
+</div>
+<h2 class="font-headline font-bold text-2xl tracking-tight">Aura Health</h2>
+<p class="mt-3 font-body text-lg text-on-surface-variant italic">
+                        Designing for mindfulness: a biometric-driven wellness companion for everyday focus.
+                    </p>
+</div>
+<!-- Project 05 - Full Width Editorial -->
+<div class="md:col-span-12 group cursor-pointer mt-12">
+<div class="grid md:grid-cols-2 gap-12 items-center bg-surface-container-low p-12 rounded-lg ghost-border">
+<div class="order-2 md:order-1">
+<div class="inline-block bg-primary text-on-primary px-3 py-1 rounded-sm font-label text-[10px] uppercase font-bold tracking-widest mb-6">Featured Project</div>
+<h2 class="font-headline font-bold text-4xl mb-6 tracking-tight leading-tight">Vanguard E-Commerce Rebrand</h2>
+<p class="font-body italic text-xl text-on-surface-variant mb-8 leading-relaxed">
+                                A comprehensive digital transformation for a heritage fashion label, blending archival aesthetics with cutting-edge headless commerce technology.
+                            </p>
+<button class="bg-primary text-on-primary font-label font-bold text-xs uppercase tracking-widest px-8 py-4 rounded-md transition-all duration-300 hover:bg-primary-dim hover:scale-102">
+                                View Case Study
+                            </button>
+</div>
+<div class="order-1 md:order-2 overflow-hidden rounded-md ambient-shadow aspect-[4/3]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Sophisticated e-commerce website layout featuring high-fashion editorial photography and elegant serif typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxuvuWsWWwNBsaiAgMPPCzXIhqpE-nneu5rbNAgZzwUYngSe5yL4foY_ATREp0M8NG2X_G8sQOBHnASeXWpD2I7Zo1w2ouJleiIYJYcCSWvSwgrYLaJqxwAzlVtm6oRsPWQGeD7rpOTyQGgqennyKXSlL2x0DLgfsFXopaky8uHqYS8z9DJIhpQnwWPLomPSHcdop529h1y_gd3zC8-yrOYKybSXyOMRn1uKYh84cogz26oSiqQrVzd-yfXoeohlNdKBeTFGBjDAM"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-7xl mx-auto px-8 py-40 text-center">
+<h3 class="font-body italic text-4xl md:text-5xl mb-10 text-on-surface">Let's build something <span class="font-headline font-bold not-italic underline decoration-primary decoration-4 underline-offset-8">meaningful</span> together.</h3>
+<a class="font-headline font-extrabold text-2xl hover:text-primary transition-colors border-b-2 border-on-surface hover:border-primary pb-2" href="mailto:hello@example.com">hello@curatedgallery.design</a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-8 bg-[#f9f9f9] dark:bg-neutral-950 border-t border-outline-variant/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-['Manrope'] font-bold text-[#2d3435] text-lg">The Curated Gallery</span>
+<span class="font-['Newsreader'] italic text-lg text-on-surface-variant">© 2024 The Curated Gallery</span>
+</div>
+<div class="flex gap-8">
+<a class="font-['Newsreader'] italic text-lg text-[#2d3435] dark:text-neutral-500 hover:opacity-70 transition-opacity" href="#">LinkedIn</a>
+<a class="font-['Newsreader'] italic text-lg text-[#2d3435] dark:text-neutral-500 hover:opacity-70 transition-opacity" href="#">Dribbble</a>
+<a class="font-['Newsreader'] italic text-lg text-[#2d3435] dark:text-neutral-500 hover:opacity-70 transition-opacity" href="#">Read.cv</a>
+</div>
+</div>
+</footer>
+</body></html>

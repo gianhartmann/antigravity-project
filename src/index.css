@@ -1,0 +1,283 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap");
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    /* Fonts */
+    --font-headline: 'Manrope', sans-serif;
+    --font-body: 'Newsreader', serif;
+    --font-label: 'Manrope', sans-serif;
+    --font-sans: 'Manrope', sans-serif;
+
+    /* shadcn semantic colors → mapped via CSS vars */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    /* Extended Stitch design tokens */
+    --color-surface: var(--surface);
+    --color-surface-dim: var(--surface-dim);
+    --color-surface-bright: var(--surface-bright);
+    --color-surface-container: var(--surface-container);
+    --color-surface-container-low: var(--surface-container-low);
+    --color-surface-container-high: var(--surface-container-high);
+    --color-surface-container-highest: var(--surface-container-highest);
+    --color-surface-container-lowest: var(--surface-container-lowest);
+    --color-surface-variant: var(--surface-variant);
+    --color-surface-tint: var(--surface-tint);
+    --color-on-surface: var(--on-surface);
+    --color-on-surface-variant: var(--on-surface-variant);
+    --color-on-background: var(--on-background);
+    --color-on-primary: var(--on-primary);
+    --color-on-primary-container: var(--on-primary-container);
+    --color-primary-dim: var(--primary-dim);
+    --color-primary-container: var(--primary-container);
+    --color-primary-fixed: var(--primary-fixed);
+    --color-primary-fixed-dim: var(--primary-fixed-dim);
+    --color-inverse-surface: var(--inverse-surface);
+    --color-inverse-on-surface: var(--inverse-on-surface);
+    --color-inverse-primary: var(--inverse-primary);
+    --color-outline: var(--outline);
+    --color-outline-variant: var(--outline-variant);
+    --color-error: var(--error);
+    --color-on-error: var(--on-error);
+    --color-tertiary: var(--tertiary);
+    --color-on-tertiary: var(--on-tertiary);
+    --color-tertiary-container: var(--tertiary-container);
+
+    /* Radius — ROUND_FOUR from Stitch */
+    --radius-sm: 0.125rem;
+    --radius-md: 0.25rem;
+    --radius-lg: 0.375rem;
+    --radius-xl: 0.5rem;
+    --radius-2xl: 0.75rem;
+    --radius-3xl: 1rem;
+    --radius-4xl: 1.5rem;
+
+    /* Sidebar (keep defaults) */
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+
+    /* Charts */
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+}
+
+/* ═══════════════════════════════════════════════
+   Light Mode — "The Curated Gallery" tokens
+   ═══════════════════════════════════════════════ */
+:root {
+    /* shadcn semantic tokens → mapped to Stitch palette */
+    --background: #f9f9f9;
+    --foreground: #2d3435;
+    --card: #ffffff;
+    --card-foreground: #2d3435;
+    --popover: #ffffff;
+    --popover-foreground: #2d3435;
+    --primary: #004dea;
+    --primary-foreground: #f8f7ff;
+    --secondary: #605f5f;
+    --secondary-foreground: #fbf8f8;
+    --muted: #f2f4f4;
+    --muted-foreground: #5a6061;
+    --accent: #dde4e5;
+    --accent-foreground: #2d3435;
+    --destructive: #9e3f4e;
+    --border: #adb3b4;
+    --input: #adb3b4;
+    --ring: #004dea;
+
+    /* Extended Stitch surface palette */
+    --surface: #f9f9f9;
+    --surface-dim: #d4dbdd;
+    --surface-bright: #f9f9f9;
+    --surface-container: #ebeeef;
+    --surface-container-low: #f2f4f4;
+    --surface-container-high: #e4e9ea;
+    --surface-container-highest: #dde4e5;
+    --surface-container-lowest: #ffffff;
+    --surface-variant: #dde4e5;
+    --surface-tint: #004dea;
+    --on-surface: #2d3435;
+    --on-surface-variant: #5a6061;
+    --on-background: #2d3435;
+    --on-primary: #f8f7ff;
+    --on-primary-container: #0043cd;
+    --primary-dim: #0043ce;
+    --primary-container: #dce1ff;
+    --primary-fixed: #dce1ff;
+    --primary-fixed-dim: #c9d2ff;
+    --inverse-surface: #0c0f0f;
+    --inverse-on-surface: #9c9d9d;
+    --inverse-primary: #6889ff;
+    --outline: #757c7d;
+    --outline-variant: #adb3b4;
+    --error: #9e3f4e;
+    --on-error: #fff7f7;
+    --tertiary: #635b77;
+    --on-tertiary: #fdf7ff;
+    --tertiary-container: #e9ddff;
+
+    --radius: 0.375rem;
+
+    /* Sidebar defaults */
+    --sidebar: #f2f4f4;
+    --sidebar-foreground: #2d3435;
+    --sidebar-primary: #004dea;
+    --sidebar-primary-foreground: #f8f7ff;
+    --sidebar-accent: #dde4e5;
+    --sidebar-accent-foreground: #2d3435;
+    --sidebar-border: #adb3b4;
+    --sidebar-ring: #004dea;
+
+    /* Charts */
+    --chart-1: #004dea;
+    --chart-2: #0043ce;
+    --chart-3: #635b77;
+    --chart-4: #605f5f;
+    --chart-5: #2d3435;
+}
+
+/* ═══════════════════════════════════════════════
+   Dark Mode (future-proofing)
+   ═══════════════════════════════════════════════ */
+.dark {
+    --background: #0c0f0f;
+    --foreground: #dde4e5;
+    --card: #1a1d1d;
+    --card-foreground: #dde4e5;
+    --popover: #1a1d1d;
+    --popover-foreground: #dde4e5;
+    --primary: #6889ff;
+    --primary-foreground: #0033a2;
+    --secondary: #d6d4d3;
+    --secondary-foreground: #403f3f;
+    --muted: #2a2d2d;
+    --muted-foreground: #9c9d9d;
+    --accent: #2a2d2d;
+    --accent-foreground: #dde4e5;
+    --destructive: #ff8b9a;
+    --border: rgba(255, 255, 255, 0.1);
+    --input: rgba(255, 255, 255, 0.15);
+    --ring: #6889ff;
+
+    --surface: #0c0f0f;
+    --surface-dim: #1a1d1d;
+    --surface-bright: #2a2d2d;
+    --surface-container: #1a1d1d;
+    --surface-container-low: #151818;
+    --surface-container-high: #222525;
+    --surface-container-highest: #2a2d2d;
+    --surface-container-lowest: #0c0f0f;
+    --surface-variant: #2a2d2d;
+    --surface-tint: #6889ff;
+    --on-surface: #dde4e5;
+    --on-surface-variant: #adb3b4;
+    --on-background: #dde4e5;
+    --on-primary: #f8f7ff;
+    --on-primary-container: #c9d2ff;
+    --primary-dim: #4a6fe0;
+    --primary-container: #0033a2;
+    --primary-fixed: #dce1ff;
+    --primary-fixed-dim: #c9d2ff;
+    --inverse-surface: #f9f9f9;
+    --inverse-on-surface: #5a6061;
+    --inverse-primary: #004dea;
+    --outline: #5a6061;
+    --outline-variant: #3a3d3d;
+    --error: #ff8b9a;
+    --on-error: #4f0116;
+    --tertiary: #dacff0;
+    --on-tertiary: #433b56;
+    --tertiary-container: #574f6a;
+
+    --sidebar: #1a1d1d;
+    --sidebar-foreground: #dde4e5;
+    --sidebar-primary: #6889ff;
+    --sidebar-primary-foreground: #f8f7ff;
+    --sidebar-accent: #2a2d2d;
+    --sidebar-accent-foreground: #dde4e5;
+    --sidebar-border: rgba(255, 255, 255, 0.1);
+    --sidebar-ring: #6889ff;
+
+    --chart-1: #6889ff;
+    --chart-2: #4a6fe0;
+    --chart-3: #dacff0;
+    --chart-4: #d6d4d3;
+    --chart-5: #dde4e5;
+}
+
+/* ═══════════════════════════════════════════════
+   Custom Utility Classes from Design System
+   ═══════════════════════════════════════════════ */
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground font-body antialiased;
+    }
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
+@layer utilities {
+    .glass-nav {
+        background: rgba(249, 249, 249, 0.7);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+
+    .dark .glass-nav {
+        background: rgba(12, 15, 15, 0.7);
+    }
+
+    .ghost-border {
+        outline: 1px solid rgba(173, 179, 180, 0.15);
+    }
+
+    .ambient-shadow {
+        box-shadow: 0 24px 48px rgba(45, 52, 53, 0.05);
+    }
+
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+/* Selection styling */
+::selection {
+    background-color: var(--primary-container);
+    color: var(--on-primary-container);
+}

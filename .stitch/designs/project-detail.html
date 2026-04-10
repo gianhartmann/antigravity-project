@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#9e3f4e",
+                    "surface": "#f9f9f9",
+                    "inverse-primary": "#6889ff",
+                    "on-primary-container": "#0043cd",
+                    "surface-variant": "#dde4e5",
+                    "primary-fixed": "#dce1ff",
+                    "surface-dim": "#d4dbdd",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary": "#635b77",
+                    "on-surface-variant": "#5a6061",
+                    "on-tertiary-container": "#554e69",
+                    "primary-fixed-dim": "#c9d2ff",
+                    "surface-tint": "#004dea",
+                    "surface-container": "#ebeeef",
+                    "inverse-on-surface": "#9c9d9d",
+                    "on-primary-fixed": "#0033a2",
+                    "surface-container-highest": "#dde4e5",
+                    "error-container": "#ff8b9a",
+                    "secondary-dim": "#545353",
+                    "surface-container-high": "#e4e9ea",
+                    "on-secondary-container": "#525151",
+                    "tertiary-container": "#e9ddff",
+                    "on-tertiary-fixed": "#433b56",
+                    "surface-container-low": "#f2f4f4",
+                    "on-primary": "#f8f7ff",
+                    "surface-bright": "#f9f9f9",
+                    "on-background": "#2d3435",
+                    "on-error": "#fff7f7",
+                    "on-primary-fixed-variant": "#004be3",
+                    "tertiary-fixed": "#e9ddff",
+                    "on-secondary-fixed-variant": "#5c5b5b",
+                    "outline": "#757c7d",
+                    "on-tertiary-fixed-variant": "#5f5773",
+                    "on-secondary-fixed": "#403f3f",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#782232",
+                    "outline-variant": "#adb3b4",
+                    "on-secondary": "#fbf8f8",
+                    "error-dim": "#4f0116",
+                    "on-surface": "#2d3435",
+                    "on-tertiary": "#fdf7ff",
+                    "tertiary-dim": "#574f6a",
+                    "background": "#f9f9f9",
+                    "secondary-fixed-dim": "#d6d4d3",
+                    "primary-dim": "#0043ce",
+                    "primary": "#004dea",
+                    "secondary-container": "#e5e2e1",
+                    "primary-container": "#dce1ff",
+                    "tertiary-fixed-dim": "#dacff0",
+                    "secondary": "#605f5f",
+                    "inverse-surface": "#0c0f0f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Newsreader"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 24px 48px rgba(45, 52, 53, 0.05);
+        }
+        .no-line { border: none !important; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary/20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#f9f9f9]/70 backdrop-blur-xl">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-8 py-6">
+<span class="font-['Manrope'] font-black text-xl text-[#2d3435]">The Editorial Portfolio</span>
+<div class="hidden md:flex gap-12">
+<a class="font-['Manrope'] font-bold tracking-tight uppercase text-xs text-[#004dea] border-b-2 border-[#004dea] pb-1" href="#">Work</a>
+<a class="font-['Manrope'] font-bold tracking-tight uppercase text-xs text-[#2d3435] hover:text-[#004dea] transition-colors duration-300" href="#">About</a>
+<a class="font-['Manrope!'] font-bold tracking-tight uppercase text-xs text-[#2d3435] hover:text-[#004dea] transition-colors duration-300" href="#">Contact</a>
+<a class="font-['Manrope'] font-bold tracking-tight uppercase text-xs text-[#2d3435] hover:text-[#004dea] transition-colors duration-300" href="#">Resume</a>
+</div>
+<button class="md:hidden">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+</div>
+</nav>
+<main class="pt-32">
+<!-- Project Hero -->
+<header class="max-w-7xl mx-auto px-8 mb-24">
+<div class="flex flex-col lg:flex-row gap-12 items-end">
+<div class="lg:w-2/3">
+<span class="font-label text-primary font-bold tracking-widest uppercase text-xs mb-4 block">UX/UI Case Study</span>
+<h1 class="font-headline font-extrabold text-5xl md:text-7xl tracking-tighter leading-none mb-8 text-on-surface">
+                        Reimagining the <br/>Digital Archive.
+                    </h1>
+</div>
+<div class="lg:w-1/3 mb-4">
+<p class="font-body italic text-2xl text-on-surface-variant leading-tight">
+                        A deep dive into modular information architecture for curated museum collections.
+                    </p>
+</div>
+</div>
+</header>
+<!-- Project Overview -->
+<section class="bg-surface-container-low py-24 mb-32">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div>
+<span class="font-label text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-4 block">Role</span>
+<p class="font-headline text-lg font-bold">Lead Product Designer</p>
+</div>
+<div>
+<span class="font-label text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-4 block">Timeline</span>
+<p class="font-headline text-lg font-bold">12 Weeks (Q3 2023)</p>
+</div>
+<div>
+<span class="font-label text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-4 block">Tools</span>
+<p class="font-headline text-lg font-bold">Figma, Framer, Principle</p>
+</div>
+<div>
+<span class="font-label text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-4 block">Focus</span>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant px-3 py-1 rounded-full font-label text-[10px] font-bold uppercase">Strategy</span>
+<span class="bg-surface-variant px-3 py-1 rounded-full font-label text-[10px] font-bold uppercase">Motion</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- The Challenge -->
+<section class="max-w-7xl mx-auto px-8 mb-48">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-5">
+<h2 class="font-headline font-bold text-4xl mb-8">The Challenge</h2>
+<p class="font-body text-xl leading-relaxed text-on-surface-variant mb-6">
+                        Museum archives are often impenetrable. The sheer volume of data overwhelms the casual visitor, while the lack of visual hierarchy makes discovery difficult. How do we create a digital experience that feels as curated as a physical gallery?
+                    </p>
+<p class="font-body text-xl leading-relaxed text-on-surface-variant">
+                        Our goal was to bridge the gap between technical metadata and visual storytelling, ensuring that every artifact has the space to tell its unique story.
+                    </p>
+</div>
+<div class="lg:col-span-7">
+<div class="aspect-[4/3] bg-surface-container overflow-hidden rounded-xl editorial-shadow">
+<img alt="Museum Gallery" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Modern minimalist museum interior with large white walls and soft natural lighting illuminating abstract art installations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVTYtX1y_XDz48QaZlu0XNVV_aAN1OzhrrPjPqbt0whiK2ZnqZ1xw3dE7T3Qd1CNXIB5rpW2A6JLJrNOR3T7wNsbkAjPoXEJpjbMR7yqaBYrNh-gCPhorWLbZroV2yvdMBxKCi-wr_4C6n0UYK_PWyD1QaQPqYzmnFalMOLpYdf-g7mvaUsn-_fMB2Txhn1snZIgk7k5zTD1RDXZtGbi70NAznijKVFi0R4UCYKhxCylScvSb5NTIjdewa4gU8RAVSM_AYX1nf2pY"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The Process -->
+<section class="bg-on-surface text-surface py-32 mb-48">
+<div class="max-w-7xl mx-auto px-8">
+<span class="font-label text-xs uppercase tracking-widest font-bold text-outline-variant mb-12 block">The Process</span>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-24">
+<div>
+<h3 class="font-headline font-bold text-3xl mb-6">01. Research &amp; Discovery</h3>
+<p class="font-body text-lg text-surface-variant/80 mb-8">
+                            We interviewed 15 curators and 30 frequent museum-goers. The insight was clear: users wanted "guided exploration" rather than a search bar. They wanted to stumble upon connections between different historical eras.
+                        </p>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+<span class="font-label text-sm uppercase">User Persona Mapping</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed">check_circle</span>
+<span class="font-label text-sm uppercase">Competitive Audit</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-square bg-surface-dim/20 rounded-lg flex items-center justify-center p-8">
+<span class="font-body italic text-4xl text-center">"Discovery over search."</span>
+</div>
+<div class="aspect-square bg-surface-dim/20 rounded-lg flex items-center justify-center p-8">
+<span class="font-body italic text-4xl text-center">"Visual hierarchy."</span>
+</div>
+</div>
+</div>
+<div class="mb-12">
+<h3 class="font-headline font-bold text-3xl mb-12">02. Wireframing Content Clusters</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<img class="w-full h-[400px] object-cover rounded-xl" data-alt="Close up of hand sketching mobile app wireframes on paper with a fine tip pen on a wooden desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoG6igfWHTbt91r_Z95VfBN9dLRb9GDZCdA7hWqCo_heaLqXYtMaOirT-d6CTieGC1l182ApvT8YF-equ7FMXqtcOisNqPpzMjFuIYPDMHlBxzgHBnCAb3xdM8NrziOEsW3deeHfbTk9-S8u1j93N9U3ynCtE31ZwDs3qlBkEuRgr65CZ8ex-vdYowg2oCEwa6se0jNxDNYw5ywhhMB8nGTvaCLVT0mSFn4Y5A2jnjqBB8CQS1oogf6j5ubhSTomYZEKZrt6vjnHQ"/>
+<img class="w-full h-[400px] object-cover rounded-xl md:mt-12" data-alt="Digital wireframes on a tablet screen showing complex grid layouts and image placeholders for a portfolio site" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV-NRTO_qGZhMlV73W2kBD5h2jqJP4f2H8kh59Vm5wG08bpTo0s73Gz9zL2m0YtPiJxHKyYQEGx2ycCjDAk58g5rASTpHVMAGzwAPbjns9Cqu7lMUq_FhSZMrpNWmSTGhDUu9wFzApzDtAfXJ0d6aCbRSfuyib1XJQnfrL2FZfw-6823qXs7Kg_vXU_viaW_CTc_XGNpP8kStUyPRY0Lx3S9nbquf_uw3XojiiFJpIJClOtRzN8HH5OlYO43nlmFkKYvue15WnW4c"/>
+<img class="w-full h-[400px] object-cover rounded-xl" data-alt="Designer point of view working on high-fidelity prototypes in Figma on a large monitor with soft ambient lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFJ5AVITogmWGpclaDxje3k1-fY91o3qiRqGTCewkS77UBTTOG-xGL_lR6rlU5TTPgImRPWNG1qsVgIxjNAhxFmM4BTMC3pwOFgGxDl6F0XPSixKS4dGBaphixq0Fk3lQO88Z4YfYiuQzFUV-TbnfrJua4M0R8EgjPgD5wXqLl35_Eh3a_kKmFTrkX0h7kydaUDHbXwxjsBh1vSBm9t3ZZ8wt5UZLvQfpmQiDwksN4B2jDCJH-PiecT9XAO2FKlwDCBqBRLKT4uB0"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The Solution -->
+<section class="max-w-7xl mx-auto px-8 mb-48">
+<div class="text-center mb-24">
+<h2 class="font-headline font-black text-6xl md:text-8xl tracking-tight mb-8">The Solution.</h2>
+<p class="font-body text-2xl max-w-2xl mx-auto text-on-surface-variant">
+                    A dynamic grid system that adapts to the content density, creating a rhythmic visual experience.
+                </p>
+</div>
+<div class="space-y-12">
+<div class="rounded-3xl overflow-hidden editorial-shadow bg-surface-container-lowest p-4 md:p-12">
+<img class="w-full rounded-2xl" data-alt="Macbook pro display showing a sophisticated user interface with large typography and clean minimalist layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKm-1HBtWrV7BFIUXYXAaxV1cF1UJySHoTYgw3e5RR6w3YpVOi6-MvkMN7K0fbkGzIlMvplhHL0-pdwhOHXZVtohAdT5nICFQJ1YxSvt_k5UrSCXdHuQ6cxMQmlcUPkSj0ibO9i66CELNRoJC7aRNAEeO7cfYT2_V6haOsVtlY9V0m1XILjERMbiSqwNpXgbGISze7QiDntqqHkJ9IIi5CrEfRocVQcdhjHCOnKG-eKcZkskH_iKLih5VEfRqs_YUII3SCXn8ES_Q"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="rounded-3xl overflow-hidden editorial-shadow bg-surface-container-lowest p-8">
+<img class="w-full h-auto rounded-xl mb-8" data-alt="Close up of a mobile device screen displaying a sleek dark mode user interface for an art gallery app" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXKn2FyQ6uVKBV8InLnGA8W7iFe_fNeuWBvUOinZL6Nf2JAJBhQJUyE7sZpmlVVN3sBSFWtCajSlP-A6zUjHCGM9Xlgc3enayxW3cLaJw4t4W92NNz6_x8ctEpnTff9EuobABkspdNcBRenKBXxW2FdhW736t10OsUjOd4LLhzq_CdITLKrnp0VwWvvwYxkg6OV6ZvUYv5kwfO0WzHvH9U6yGmISupUNXOLOt_MRv0DEdGez-AjzdPx1CBVeKzS5fVVInmqEqBb2A"/>
+<h4 class="font-headline font-bold text-xl mb-4">Tactile Navigation</h4>
+<p class="font-body text-lg text-on-surface-variant">Gestural navigation that mimics turning the pages of an art book, providing haptic feedback on every interaction.</p>
+</div>
+<div class="rounded-3xl overflow-hidden editorial-shadow bg-surface-container-lowest p-8">
+<img class="w-full h-auto rounded-xl mb-8" data-alt="UI design system details showing typography scales and color palette in a structured digital workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWjvhxnoJK3KdGdjeFWvfrpm6WTKhKdZ6TBnmdmAlGZ-tcdWKfH2VkktRw7AIRRFFbzPZP07t0b6FggajMqmkYbZkJ2nqsjgajptxjIDs2TmT-bV_BqDEVUTMIFOh6dYcgq0ei-M_SsztDXlMTRlK5fGZj-CrnVXLj27mVyvdmruCwGQQl0-8xGE8t2NGKrLHBBsluTLt4l9hTL2bTRu1adoX6ya60xw8i4USD_eirDXAYrqukSG0qGMd62QN8DY46NsWVW9s96KE"/>
+<h4 class="font-headline font-bold text-xl mb-4">Semantic Scale</h4>
+<p class="font-body text-lg text-on-surface-variant">A responsive typography system that prioritizes legibility across all screen sizes without losing its editorial soul.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Results / Impact -->
+<section class="max-w-7xl mx-auto px-8 mb-48">
+<div class="border-t border-outline-variant/30 pt-24 grid grid-cols-1 lg:grid-cols-3 gap-16">
+<div class="lg:col-span-1">
+<h2 class="font-headline font-bold text-4xl mb-6">Impact &amp; <br/>Outcomes</h2>
+<p class="font-body text-xl text-on-surface-variant">
+                        The redesign led to a significant increase in engagement metrics and curator satisfaction.
+                    </p>
+</div>
+<div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-12">
+<div class="p-8 bg-surface-container-low rounded-2xl">
+<span class="font-headline font-black text-6xl text-primary mb-2 block">+140%</span>
+<p class="font-label text-xs uppercase font-bold tracking-widest text-on-surface-variant">Avg. Session Duration</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl">
+<span class="font-headline font-black text-6xl text-primary mb-2 block">2.4M</span>
+<p class="font-label text-xs uppercase font-bold tracking-widest text-on-surface-variant">Monthly active discoveries</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl">
+<span class="font-headline font-black text-6xl text-primary mb-2 block">-45%</span>
+<p class="font-label text-xs uppercase font-bold tracking-widest text-on-surface-variant">Bounce Rate on Mobile</p>
+</div>
+<div class="p-8 bg-surface-container-low rounded-2xl">
+<span class="font-headline font-black text-6xl text-primary mb-2 block">12k+</span>
+<p class="font-label text-xs uppercase font-bold tracking-widest text-on-surface-variant">Shared collections</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Next Project Call to Action -->
+<section class="py-32 border-t border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-8 text-center">
+<span class="font-label text-xs uppercase tracking-widest font-bold text-on-surface-variant mb-8 block">Next Project</span>
+<a class="group" href="#">
+<h2 class="font-headline font-extrabold text-5xl md:text-8xl tracking-tighter transition-all group-hover:text-primary">
+                        Fluid Motion <br/>Systems →
+                    </h2>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-8 bg-[#f9f9f9]">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2">
+<span class="font-['Manrope'] font-bold text-[#2d3435]">The Editorial Portfolio</span>
+<span class="font-['Newsreader'] italic text-lg text-on-surface-variant">© 2024 The Curated Gallery</span>
+</div>
+<div class="flex gap-8">
+<a class="font-['Newsreader'] italic text-lg text-[#2d3435] hover:opacity-70 transition-opacity" href="#">LinkedIn</a>
+<a class="font-['Newsreader'] italic text-lg text-[#2d3435] hover:opacity-70 transition-opacity" href="#">Dribbble</a>
+<a class="font-['Newsreader'] italic text-lg text-[#2d3435] hover:opacity-70 transition-opacity" href="#">Read.cv</a>
+</div>
+</div>
+</footer>
+</body></html>
