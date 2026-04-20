@@ -74,17 +74,16 @@ const HomePage: React.FC = () => {
                   {featuredProject.description}
                 </p>
                 <div>
-                  <Button
-                    asChild
-                    className="bg-primary text-on-primary px-6 md:px-8 py-4 md:py-5 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-primary-dim transition-all duration-200 transform hover:scale-[1.02] h-auto"
-                  >
-                    <Link to={`/project/${featuredProject.slug}`}>
+                  <Link to={`/project/${featuredProject.slug}`}>
+                    <Button
+                      className="bg-primary text-on-primary px-6 md:px-8 py-4 md:py-5 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-primary-dim transition-all duration-200 transform hover:scale-[1.02] h-auto"
+                    >
                       {featuredProject.cta}
                       <span className="material-symbols-outlined text-sm ml-2">
                         arrow_forward
                       </span>
-                    </Link>
-                  </Button>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

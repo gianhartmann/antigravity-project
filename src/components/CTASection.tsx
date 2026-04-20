@@ -23,13 +23,14 @@ export const CTASection: React.FC<Readonly<CTASectionProps>> = ({
 
       {variant === "buttons" && (
         <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-          <Button
-            asChild
-            size="lg"
-            className="bg-on-surface text-surface px-8 md:px-10 py-5 md:py-6 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:opacity-90 transition-all h-auto"
-          >
-            <Link to="/about#contact">Get In Touch</Link>
-          </Button>
+          <Link to="/about#contact">
+            <Button
+              size="lg"
+              className="bg-on-surface text-surface px-8 md:px-10 py-5 md:py-6 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:opacity-90 transition-all h-auto"
+            >
+              Get In Touch
+            </Button>
+          </Link>
           <Button
             variant="outline"
             size="lg"

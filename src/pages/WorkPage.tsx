@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/Footer";
-import { CTASection } from "@/components/CTASection";
 import { ProjectCard } from "@/components/ProjectCard";
 import {
   caseStudies,
@@ -65,14 +64,13 @@ const WorkPage: React.FC = () => {
                 <p className="font-body text-base md:text-lg text-on-surface-variant leading-relaxed mb-8">
                   {featuredCaseStudy.description}
                 </p>
-                <Button
-                  asChild
-                  className="bg-primary text-on-primary px-6 md:px-8 py-4 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-primary-dim transition-all duration-200 transform hover:scale-[1.02] h-auto"
-                >
-                  <Link to={`/project/${featuredCaseStudy.slug}`}>
+                <Link to={`/project/${featuredCaseStudy.slug}`}>
+                  <Button
+                    className="bg-primary text-on-primary px-6 md:px-8 py-4 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-primary-dim transition-all duration-200 transform hover:scale-[1.02] h-auto"
+                  >
                     {featuredCaseStudy.cta}
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </div>
 
               {/* Image */}
