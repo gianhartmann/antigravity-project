@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/i18n/LanguageContext";
 import { footerContent } from "@/data/mockData";
 
 interface FooterProps {
@@ -12,6 +13,7 @@ export const Footer: React.FC<Readonly<FooterProps>> = ({
   variant = "light",
 }) => {
   const isDark = variant === "dark";
+  const { t } = useLanguage();
 
   return (
     <footer
@@ -27,10 +29,10 @@ export const Footer: React.FC<Readonly<FooterProps>> = ({
               isDark ? "text-surface-dim" : "text-on-surface"
             } hover:opacity-80 transition-opacity`}
           >
-            {footerContent.brand}
+            {t.footer.brand}
           </Link>
           <span className="font-body italic text-base md:text-lg text-on-surface-variant">
-            {footerContent.copyright}
+            {t.footer.copyright}
           </span>
         </div>
 

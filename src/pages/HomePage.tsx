@@ -4,16 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Footer } from "@/components/Footer";
 import { CTASection } from "@/components/CTASection";
+import { useLanguage } from "@/i18n/LanguageContext";
 import {
-  heroContent,
   featuredProject,
-  designPhilosophy,
   experienceStat,
-  toolboxItems,
   trustedByLogos,
 } from "@/data/mockData";
 
 const HomePage: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <>
       <main className="pt-28 md:pt-32 pb-20 md:pb-24">
@@ -22,19 +22,19 @@ const HomePage: React.FC = () => {
           <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-end">
             <div className="md:col-span-9">
               <span className="font-label text-xs uppercase tracking-widest text-primary font-bold mb-4 md:mb-6 block">
-                {heroContent.tagline}
+                {t.hero.tagline}
               </span>
               <h1 className="font-headline font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] text-on-surface tracking-tighter mb-6 md:mb-8">
-                {heroContent.headline}{" "}
+                {t.hero.headline}{" "}
                 <span className="italic font-body font-normal text-primary">
-                  {heroContent.headlineAccent}
+                  {t.hero.headlineAccent}
                 </span>{" "}
-                {heroContent.headlineSuffix}
+                {t.hero.headlineSuffix}
               </h1>
             </div>
             <div className="md:col-span-3 pb-2 md:pb-4">
               <p className="font-body text-lg md:text-xl text-on-surface-variant leading-relaxed">
-                {heroContent.description}
+                {t.hero.description}
               </p>
             </div>
           </div>
@@ -57,7 +57,7 @@ const HomePage: React.FC = () => {
               {/* Content */}
               <div className="w-full md:w-2/5 p-8 md:p-12 lg:p-20 flex flex-col justify-center">
                 <div className="flex gap-2 mb-6 md:mb-8">
-                  {featuredProject.categories.map((cat) => (
+                  {t.featured.categories.map((cat) => (
                     <Badge
                       key={cat}
                       variant="secondary"
@@ -68,17 +68,17 @@ const HomePage: React.FC = () => {
                   ))}
                 </div>
                 <h2 className="font-headline font-bold text-2xl md:text-3xl lg:text-4xl text-on-surface mb-4 md:mb-6 leading-tight">
-                  {featuredProject.title}
+                  {t.featured.title}
                 </h2>
                 <p className="font-body text-base md:text-lg text-on-surface-variant mb-8 md:mb-12 leading-relaxed">
-                  {featuredProject.description}
+                  {t.featured.description}
                 </p>
                 <div>
                   <Link to={`/project/${featuredProject.slug}`}>
                     <Button
                       className="bg-primary text-on-primary px-6 md:px-8 py-4 md:py-5 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-primary-dim transition-all duration-200 transform hover:scale-[1.02] h-auto"
                     >
-                      {featuredProject.cta}
+                      {t.featured.cta}
                       <span className="material-symbols-outlined text-sm ml-2">
                         arrow_forward
                       </span>
@@ -96,13 +96,13 @@ const HomePage: React.FC = () => {
             {/* Design Philosophy */}
             <div className="sm:col-span-2 bg-surface-container-low p-8 md:p-12 flex flex-col justify-between min-h-[280px] md:min-h-[320px]">
               <h3 className="font-headline font-bold text-xl md:text-2xl text-on-surface">
-                {designPhilosophy.title}
+                {t.bento.philosophyTitle}
               </h3>
               <p className="font-body text-xl md:text-2xl italic text-on-surface leading-relaxed max-w-xl my-6">
-                {designPhilosophy.quote}
+                {t.bento.philosophyQuote}
               </p>
               <div className="flex gap-4">
-                {designPhilosophy.keywords.map((keyword) => (
+                {t.bento.keywords.map((keyword) => (
                   <span
                     key={keyword}
                     className="font-label text-xs uppercase font-bold text-primary"
@@ -126,7 +126,7 @@ const HomePage: React.FC = () => {
                   {experienceStat.value}
                 </div>
                 <div className="font-label text-xs uppercase tracking-widest font-bold opacity-80">
-                  {experienceStat.label}
+                  {t.bento.experienceLabel}
                 </div>
               </div>
             </div>
@@ -134,10 +134,10 @@ const HomePage: React.FC = () => {
             {/* Toolbox */}
             <div className="bg-surface-container-lowest ghost-border p-8 md:p-12 flex flex-col justify-between min-h-[280px] md:min-h-[320px] ambient-shadow">
               <h3 className="font-headline font-bold text-lg md:text-xl text-on-surface">
-                Toolbox
+                {t.bento.toolboxTitle}
               </h3>
               <ul className="space-y-3 md:space-y-4 mt-6">
-                {toolboxItems.map((item) => (
+                {t.bento.toolboxItems.map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <span className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
                     <span className="font-label text-sm uppercase font-bold text-on-surface-variant">
@@ -152,7 +152,7 @@ const HomePage: React.FC = () => {
             <div className="sm:col-span-2 bg-surface-container-low p-8 md:p-12 flex items-center justify-center min-h-[160px]">
               <div className="text-center">
                 <h3 className="font-headline font-bold text-xl md:text-2xl text-on-surface mb-4">
-                  Trusted By
+                  {t.bento.trustedBy}
                 </h3>
                 <div className="flex flex-wrap justify-center gap-8 md:gap-12 opacity-40 grayscale">
                   {trustedByLogos.map((logo, i) => (
@@ -178,7 +178,7 @@ const HomePage: React.FC = () => {
         </section>
 
         {/* ─── Secondary CTA ─── */}
-        <CTASection headline="Ready to start a conversation?" variant="buttons" />
+        <CTASection headline={t.cta.headline} variant="buttons" />
       </main>
 
       <Footer />

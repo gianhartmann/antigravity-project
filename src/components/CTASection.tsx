@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface CTASectionProps {
   readonly headline: string;
@@ -15,6 +16,8 @@ export const CTASection: React.FC<Readonly<CTASectionProps>> = ({
   email,
   className = "",
 }) => {
+  const { t } = useLanguage();
+
   return (
     <section className={`max-w-7xl mx-auto px-6 md:px-8 mb-20 text-center ${className}`}>
       <h2 className="font-body text-3xl md:text-4xl italic text-on-surface mb-8 text-balance">
@@ -28,7 +31,7 @@ export const CTASection: React.FC<Readonly<CTASectionProps>> = ({
               size="lg"
               className="bg-on-surface text-surface px-8 md:px-10 py-5 md:py-6 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:opacity-90 transition-all h-auto"
             >
-              Get In Touch
+              {t.cta.getInTouch}
             </Button>
           </Link>
           <Button
@@ -36,7 +39,7 @@ export const CTASection: React.FC<Readonly<CTASectionProps>> = ({
             size="lg"
             className="ghost-border bg-transparent text-on-surface px-8 md:px-10 py-5 md:py-6 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-surface-container-low transition-all h-auto border-none"
           >
-            Download CV
+            {t.cta.downloadCV}
           </Button>
         </div>
       )}

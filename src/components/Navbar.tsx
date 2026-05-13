@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { navLinks } from "@/data/mockData";
+import { LanguageToggle } from "@/components/LanguageToggle";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 interface NavbarProps {
   readonly className?: string;
@@ -10,6 +11,14 @@ interface NavbarProps {
 export const Navbar: React.FC<Readonly<NavbarProps>> = ({ className = "" }) => {
   const location = useLocation();
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t.nav.work, href: "/work" },
+    { label: t.nav.about, href: "/about" },
+    { label: t.nav.contact, href: "/about#contact" },
+    { label: t.nav.resume, href: "#" },
+  ];
 
   return (
     <nav className={`fixed top-0 w-full z-50 glass-nav ${className}`}>
@@ -18,7 +27,7 @@ export const Navbar: React.FC<Readonly<NavbarProps>> = ({ className = "" }) => {
           to="/"
           className="font-headline font-black text-lg md:text-xl text-on-surface tracking-tight hover:opacity-80 transition-opacity"
         >
-          The Editorial Portfolio
+          {t.footer.brand}
         </Link>
 
         {/* Desktop Nav */}
@@ -27,7 +36,7 @@ export const Navbar: React.FC<Readonly<NavbarProps>> = ({ className = "" }) => {
             const isActive = location.pathname === link.href;
             return (
               <Link
-                key={link.label}
+                key={link.href}
                 to={link.href}
                 className={`font-headline font-bold tracking-tight uppercase text-xs transition-all duration-300 ${
                   isActive
@@ -39,10 +48,12 @@ export const Navbar: React.FC<Readonly<NavbarProps>> = ({ className = "" }) => {
               </Link>
             );
           })}
+          <LanguageToggle />
         </div>
 
         {/* Mobile Menu */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-3">
+          <LanguageToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               className="text-on-surface p-1"
@@ -61,7 +72,7 @@ export const Navbar: React.FC<Readonly<NavbarProps>> = ({ className = "" }) => {
                   const isActive = location.pathname === link.href;
                   return (
                     <Link
-                      key={link.label}
+                      key={link.href}
                       to={link.href}
                       onClick={() => setOpen(false)}
                       className={`font-headline font-bold uppercase text-sm tracking-wide transition-colors ${

@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "@/i18n/LanguageContext";
 import { Navbar } from "@/components/Navbar";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import HomePage from "@/pages/HomePage";
@@ -13,16 +14,18 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/work" element={<WorkPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/project/:slug" element={<ProjectDetailPage />} />
-      </Routes>
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/work" element={<WorkPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/project/:slug" element={<ProjectDetailPage />} />
+        </Routes>
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 
