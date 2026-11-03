@@ -1,4 +1,4 @@
-export type Locale = "en" | "pt-BR";
+export type Locale = "en" | "pt-BR" | "es";
 
 export interface Translations {
   // Nav

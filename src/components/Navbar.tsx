@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { LanguageToggle } from "@/components/LanguageToggle";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 interface NavbarProps {
@@ -48,11 +49,15 @@ export const Navbar: React.FC<Readonly<NavbarProps>> = ({ className = "" }) => {
               </Link>
             );
           })}
-          <LanguageToggle />
+          <div className="flex items-center gap-2 border-l border-outline-variant/30 pl-4">
+            <ThemeToggle />
+            <LanguageToggle />
+          </div>
         </div>
 
         {/* Mobile Menu */}
-        <div className="md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
           <LanguageToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger

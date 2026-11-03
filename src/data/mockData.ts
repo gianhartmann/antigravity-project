@@ -118,8 +118,8 @@ export const featuredCaseStudy = {
   description:
     "A comprehensive digital transformation for a heritage fashion label, blending archival aesthetics with cutting-edge headless commerce technology.",
   image:
-    "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1200&h=800&fit=crop",
-  imageAlt: "Fashion professional portrait for Vanguard rebrand",
+    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200&h=800&fit=crop",
+  imageAlt: "Fashion model editorial styling for Vanguard rebrand",
   slug: "vanguard-rebrand",
   cta: "View Case Study",
 };

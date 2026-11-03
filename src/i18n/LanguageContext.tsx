@@ -1,11 +1,13 @@
-import React, { createContext, useContext, useState, useCallback } from "react";
+import React, { createContext, useContext, useState, useCallback, useEffect } from "react";
 import type { Locale, Translations } from "./types";
 import { en } from "./en";
 import { ptBR } from "./pt-br";
+import { es } from "./es";
 
 const translationsMap: Record<Locale, Translations> = {
-  en,
   "pt-BR": ptBR,
+  en,
+  es,
 };
 
 interface LanguageContextValue {
@@ -25,18 +27,22 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
       const saved = localStorage.getItem("portfolio-locale") as Locale | null;
       if (saved && translationsMap[saved]) return saved;
     }
-    return "en";
+    return "pt-BR";
   });
 
   const setLocale = useCallback((newLocale: Locale) => {
     setLocaleState(newLocale);
     localStorage.setItem("portfolio-locale", newLocale);
-    document.documentElement.lang = newLocale === "pt-BR" ? "pt-BR" : "en";
+    document.documentElement.lang = newLocale;
   }, []);
 
   const toggleLocale = useCallback(() => {
-    setLocale(locale === "en" ? "pt-BR" : "en");
+    setLocale(locale === "pt-BR" ? "en" : locale === "en" ? "es" : "pt-BR");
   }, [locale, setLocale]);
+
+  useEffect(() => {
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   const t = translationsMap[locale];
 

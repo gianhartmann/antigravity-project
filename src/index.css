@@ -6,7 +6,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
     /* Fonts */
@@ -97,6 +97,15 @@
    Light Mode — "The Curated Gallery" tokens
    ═══════════════════════════════════════════════ */
 :root {
+    color-scheme: light dark;
+
+    &:has(> head > meta[name="color-scheme"][content="dark"]) {
+        color-scheme: dark;
+    }
+    &:has(> head > meta[name="color-scheme"][content="light"]) {
+        color-scheme: light;
+    }
+
     /* shadcn semantic tokens → mapped to Stitch palette */
     --background: #f9f9f9;
     --foreground: #2d3435;
@@ -211,7 +220,7 @@
     --primary-fixed: #dce1ff;
     --primary-fixed-dim: #c9d2ff;
     --inverse-surface: #f9f9f9;
-    --inverse-on-surface: #5a6061;
+    --inverse-on-surface: #2d3435;
     --inverse-primary: #004dea;
     --outline: #5a6061;
     --outline-variant: #3a3d3d;
@@ -260,15 +269,25 @@
     }
 
     .dark .glass-nav {
-        background: rgba(12, 15, 15, 0.7);
+        background: rgba(12, 15, 15, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
     }
 
     .ghost-border {
         outline: 1px solid rgba(173, 179, 180, 0.15);
     }
 
+    .dark .ghost-border {
+        outline: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
     .ambient-shadow {
         box-shadow: 0 24px 48px rgba(45, 52, 53, 0.05);
+    }
+
+    .dark .ambient-shadow {
+        box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
     }
 
     .text-balance {
@@ -280,4 +299,23 @@
 ::selection {
     background-color: var(--primary-container);
     color: var(--on-primary-container);
+}
+
+/* Silky smooth theme switching transitions */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+    transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    transition-delay: 0s !important;
+}
+
+/* View Transitions animation smoothing */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.35s;
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }

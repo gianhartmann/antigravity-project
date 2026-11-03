@@ -1,9 +1,5 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Footer } from "@/components/Footer";
 import { ProcessChip } from "@/components/ProcessChip";
 import { useContactForm } from "@/hooks/useContactForm";
@@ -27,77 +23,76 @@ const AboutPage: React.FC = () => {
 
   return (
     <>
-      <main className="pt-28 md:pt-32 pb-20 md:pb-24">
-        {/* ─── Hero Split ─── */}
-        <section className="max-w-7xl mx-auto px-6 md:px-8 mb-16 md:mb-24">
-          <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
-            {/* Text */}
-            <div className="md:col-span-4 lg:col-span-3">
-              <h1 className="font-headline font-extrabold text-5xl sm:text-6xl md:text-7xl text-on-surface tracking-tighter leading-[1.05] mb-4 italic">
+      <main className="pt-28 md:pt-32">
+        {/* ─── Hero & Bio Section (Exact Stitch Design) ─── */}
+        <section className="max-w-7xl mx-auto px-6 md:px-8 mb-24 md:mb-40">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+            {/* Sticky Headline/Title */}
+            <div className="md:col-span-4 md:sticky md:top-32">
+              <h1 className="font-headline font-extrabold text-5xl md:text-6xl tracking-tighter text-on-surface leading-none mb-8">
                 {t.about.headline}
               </h1>
-              <div className="flex items-center gap-3 mt-6">
-                <div className="w-8 h-[2px] bg-on-surface-variant" />
+              <div className="flex items-center gap-4 group">
+                <div className="h-[1px] w-12 bg-outline-variant group-hover:w-16 transition-all duration-500" />
                 <span className="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">
                   {t.about.subtitle}
                 </span>
               </div>
             </div>
 
-            {/* Portrait */}
-            <div className="md:col-span-8 lg:col-span-9">
-              <div className="relative overflow-hidden">
-                <img
-                  src={aboutHero.portrait}
-                  alt={aboutHero.portraitAlt}
-                  className="w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] object-cover object-top"
-                />
+            {/* Main Content Area */}
+            <div className="md:col-span-8 flex flex-col gap-16 md:gap-24">
+              {/* Headshot & Intro */}
+              <div className="relative group">
+                <div className="aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low shadow-sm">
+                  <img
+                    alt={aboutHero.portraitAlt}
+                    src={aboutHero.portrait}
+                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                  />
+                </div>
+                <div className="mt-8 md:mt-12 max-w-xl">
+                  <p className="text-2xl md:text-3xl font-body italic leading-relaxed text-on-surface">
+                    {t.about.quote}
+                  </p>
+                </div>
+              </div>
+
+              {/* Narrative Bio Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+                <div className="space-y-4 md:space-y-6">
+                  <h3 className="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">
+                    {t.about.approachTitle}
+                  </h3>
+                  <p className="text-lg md:text-xl leading-relaxed text-on-surface-variant font-body">
+                    {t.about.approachBody}
+                  </p>
+                </div>
+                <div className="space-y-4 md:space-y-6">
+                  <h3 className="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">
+                    {t.about.backgroundTitle}
+                  </h3>
+                  <p className="text-lg md:text-xl leading-relaxed text-on-surface-variant font-body">
+                    {t.about.backgroundBody}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* ─── Quote Block ─── */}
-        <section className="max-w-4xl mx-auto px-6 md:px-8 mb-16 md:mb-24">
-          <blockquote className="font-body text-xl sm:text-2xl md:text-3xl italic text-on-surface leading-relaxed">
-            {t.about.quote}
-          </blockquote>
-        </section>
-
-        {/* ─── Two-Column Philosophy ─── */}
-        <section className="max-w-7xl mx-auto px-6 md:px-8 mb-24 md:mb-32">
-          <div className="grid sm:grid-cols-2 gap-8 md:gap-16 max-w-4xl mx-auto">
-            <div>
-              <h3 className="font-headline font-bold text-sm uppercase tracking-widest text-on-surface mb-4">
-                {t.about.approachTitle}
-              </h3>
-              <p className="font-body text-base md:text-lg text-on-surface-variant leading-relaxed">
-                {t.about.approachBody}
-              </p>
-            </div>
-            <div>
-              <h3 className="font-headline font-bold text-sm uppercase tracking-widest text-on-surface mb-4">
-                {t.about.backgroundTitle}
-              </h3>
-              <p className="font-body text-base md:text-lg text-on-surface-variant leading-relaxed">
-                {t.about.backgroundBody}
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ─── Capabilities ─── */}
-        <section className="max-w-7xl mx-auto px-6 md:px-8 mb-24 md:mb-32 bg-surface-container-low py-16 md:py-20 -mx-6 md:-mx-8 px-6 md:px-8">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 md:mb-10">
-              <h2 className="font-headline font-extrabold text-3xl md:text-4xl lg:text-5xl text-on-surface tracking-tight leading-tight max-w-sm">
+        {/* ─── Process Chips / Expertise Area (Bento-lite) ─── */}
+        <section className="w-full bg-surface-container-low py-20 md:py-32 mb-24 md:mb-40 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-6 md:px-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8">
+              <h2 className="font-headline font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tighter text-on-surface max-w-md leading-tight">
                 {t.about.capabilitiesHeadline}
               </h2>
-              <span className="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold">
+              <span className="font-label text-xs uppercase tracking-widest text-outline font-bold">
                 {t.about.capabilitiesLabel}
               </span>
             </div>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 md:gap-4">
               {t.about.capabilities.map((cap) => (
                 <ProcessChip key={cap} label={cap} />
               ))}
@@ -105,31 +100,33 @@ const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        {/* ─── Contact Section ─── */}
+        {/* ─── Contact Section (Exact Stitch Design) ─── */}
         <section
           id="contact"
-          className="max-w-7xl mx-auto px-6 md:px-8 mb-20 scroll-mt-32"
+          className="max-w-7xl mx-auto px-6 md:px-8 py-20 md:py-40"
         >
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-start">
             {/* Left: Info */}
-            <div>
-              <h2 className="font-headline font-extrabold text-4xl md:text-5xl lg:text-6xl text-on-surface tracking-tight leading-[1.05] mb-6">
+            <div className="md:col-span-5 space-y-8 md:space-y-12">
+              <h2 className="font-headline font-extrabold text-5xl md:text-6xl tracking-tighter text-on-surface leading-none">
                 {t.about.contactHeadline}
               </h2>
-              <p className="font-body text-lg text-on-surface-variant leading-relaxed italic mb-8 md:mb-12 max-w-sm">
+              <p className="text-xl md:text-2xl font-body italic text-on-surface-variant max-w-sm leading-relaxed">
                 {t.about.contactDescription}
               </p>
-
-              <div className="border-t border-outline-variant/20 pt-6">
-                <span className="font-label text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-4 block">
-                  {t.about.socialsLabel}
-                </span>
-                <div className="flex gap-6">
+              <div className="space-y-6 pt-4 md:pt-8">
+                <div className="flex items-center gap-4">
+                  <span className="font-headline font-bold text-xs uppercase tracking-widest text-outline">
+                    {t.about.socialsLabel}
+                  </span>
+                  <div className="h-[1px] flex-grow bg-outline-variant/30" />
+                </div>
+                <div className="flex gap-6 md:gap-8">
                   {contactContent.socials.map((social) => (
                     <a
                       key={social.label}
                       href={social.href}
-                      className="font-label text-xs uppercase font-bold text-primary hover:text-primary-dim transition-colors"
+                      className="font-headline font-bold text-sm uppercase tracking-tight text-primary hover:opacity-70 transition-opacity"
                     >
                       {social.label}
                     </a>
@@ -138,73 +135,85 @@ const AboutPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Right: Form */}
-            <div>
-              <form onSubmit={handleSubmit} className="space-y-8">
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <Label
+            {/* Right: Form Card */}
+            <div className="md:col-span-7 bg-surface-container-lowest p-8 md:p-16 rounded-xl ambient-shadow border border-outline-variant/10">
+              <form onSubmit={handleSubmit} className="space-y-8 md:space-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                  <div className="relative group">
+                    <label
                       htmlFor="name"
-                      className="font-label text-xs uppercase tracking-widest font-bold text-on-surface"
+                      className="font-headline font-bold text-[10px] uppercase tracking-[0.2em] text-outline mb-2 block"
                     >
                       {t.about.formName}
-                    </Label>
-                    <Input
+                    </label>
+                    <input
                       id="name"
+                      name="name"
                       type="text"
+                      autoComplete="name"
+                      required
                       placeholder={t.about.formNamePlaceholder}
                       value={form.name}
                       onChange={(e) => updateField("name", e.target.value)}
-                      className="bg-transparent border-0 border-b-2 border-outline-variant/30 rounded-none px-0 py-3 font-body text-lg italic placeholder:text-on-surface-variant/40 focus:border-primary focus-visible:ring-0 focus-visible:ring-offset-0 transition-colors"
+                      className="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 font-body text-lg md:text-xl text-on-surface focus:outline-none focus:border-primary transition-colors placeholder:text-outline-variant/50"
                     />
                   </div>
-                  <div className="space-y-2">
-                    <Label
+                  <div className="relative group">
+                    <label
                       htmlFor="email"
-                      className="font-label text-xs uppercase tracking-widest font-bold text-on-surface"
+                      className="font-headline font-bold text-[10px] uppercase tracking-[0.2em] text-outline mb-2 block"
                     >
                       {t.about.formEmail}
-                    </Label>
-                    <Input
+                    </label>
+                    <input
                       id="email"
+                      name="email"
                       type="email"
+                      autoComplete="email"
+                      required
                       placeholder={t.about.formEmailPlaceholder}
                       value={form.email}
                       onChange={(e) => updateField("email", e.target.value)}
-                      className="bg-transparent border-0 border-b-2 border-outline-variant/30 rounded-none px-0 py-3 font-body text-lg italic placeholder:text-on-surface-variant/40 focus:border-primary focus-visible:ring-0 focus-visible:ring-offset-0 transition-colors"
+                      className="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 font-body text-lg md:text-xl text-on-surface focus:outline-none focus:border-primary transition-colors placeholder:text-outline-variant/50"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
-                  <Label
+                <div className="relative group">
+                  <label
                     htmlFor="message"
-                    className="font-label text-xs uppercase tracking-widest font-bold text-on-surface"
+                    className="font-headline font-bold text-[10px] uppercase tracking-[0.2em] text-outline mb-2 block"
                   >
                     {t.about.formMessage}
-                  </Label>
-                  <Textarea
+                  </label>
+                  <textarea
                     id="message"
+                    name="message"
+                    required
                     placeholder={t.about.formMessagePlaceholder}
                     value={form.message}
                     onChange={(e) => updateField("message", e.target.value)}
                     rows={4}
-                    className="bg-transparent border-0 border-b-2 border-outline-variant/30 rounded-none px-0 py-3 font-body text-lg italic placeholder:text-on-surface-variant/40 focus:border-primary focus-visible:ring-0 focus-visible:ring-offset-0 transition-colors resize-none"
+                    className="w-full bg-transparent border-0 border-b border-outline-variant py-4 px-0 font-body text-lg md:text-xl text-on-surface focus:outline-none focus:border-primary transition-colors placeholder:text-outline-variant/50 resize-none"
                   />
                 </div>
 
-                <Button
-                  type="submit"
-                  disabled={submitted}
-                  className="bg-primary text-on-primary px-8 py-5 font-label text-xs font-bold uppercase tracking-widest rounded-lg hover:bg-primary-dim transition-all duration-200 transform hover:scale-[1.02] h-auto"
-                >
-                  {submitted ? t.about.formSent : t.about.formSubmit}
-                  {!submitted && (
-                    <span className="material-symbols-outlined text-sm ml-2">
-                      arrow_forward
+                <div className="flex justify-start">
+                  <button
+                    type="submit"
+                    disabled={submitted}
+                    className="group relative inline-flex items-center gap-4 bg-primary text-on-primary px-10 py-5 rounded-md font-label font-bold text-xs uppercase tracking-widest overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-primary/20 cursor-pointer"
+                  >
+                    <span className="relative z-10">
+                      {submitted ? t.about.formSent : t.about.formSubmit}
                     </span>
-                  )}
-                </Button>
+                    {!submitted && (
+                      <span className="material-symbols-outlined relative z-10 text-lg transition-transform group-hover:translate-x-1">
+                        arrow_forward
+                      </span>
+                    )}
+                  </button>
+                </div>
               </form>
             </div>
           </div>

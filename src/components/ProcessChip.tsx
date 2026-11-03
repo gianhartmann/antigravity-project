@@ -11,7 +11,7 @@ export const ProcessChip: React.FC<Readonly<ProcessChipProps>> = ({
 }) => {
   return (
     <span
-      className={`inline-block px-5 py-2.5 bg-surface-variant/60 rounded-full font-label text-xs uppercase tracking-wider text-on-surface-variant font-bold transition-colors hover:bg-surface-variant ${className}`}
+      className={`bg-surface-variant px-6 py-3 rounded-full font-label text-xs uppercase font-bold tracking-wider text-on-surface-variant hover:bg-surface-variant/80 transition-colors cursor-default select-none ${className}`}
     >
       {label}
     </span>
