@@ -39,7 +39,7 @@ export const designPhilosophy = {
 };
 
 export const experienceStat = {
-  value: "8+",
+  value: "5+",
   label: "Years of Experience",
   icon: "deployed_code",
 };
@@ -126,11 +126,10 @@ export const featuredCaseStudy = {
 
 // ─── About Page ───
 export const aboutHero = {
-  headline: "The Story Behind The Craft.",
-  subtitle: "Designer & Researcher",
-  portrait:
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1200&fit=crop&q=80",
-  portraitAlt: "Designer portrait in black and white",
+  headline: "A história por trás do ofício.",
+  subtitle: "Product Designer & UI/UX Designer",
+  portrait: "/profile.webp",
+  portraitAlt: "Gian Hartmann - Product Designer & UI/UX Designer",
 };
 
 export const aboutQuote =
@@ -163,11 +162,11 @@ export const contactContent = {
   description:
     "Available for select collaborations and advisory roles. Let's build something meaningful.",
   socials: [
-    { label: "LinkedIn", href: "#" },
-    { label: "Dribbble", href: "#" },
-    { label: "Read.cv", href: "#" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/gianhartmann/" },
+    { label: "Behance", href: "https://www.behance.net/gianhartmann" },
+    { label: "GitHub", href: "https://github.com/gianhartmann" },
   ],
-  email: "hello@curatedgallery.design",
+  email: "gianbydesign@gmail.com",
 };
 
 // ─── Project Detail ───
@@ -248,11 +247,11 @@ export const projectDetail = {
 
 // ─── Footer ───
 export const footerContent = {
-  brand: "The Editorial Portfolio",
-  copyright: "© 2024 The Curated Gallery",
+  brand: "Gian Hartmann",
+  copyright: "Feito de curiosidade & café",
   socials: [
-    { label: "LinkedIn", href: "#" },
-    { label: "Dribbble", href: "#" },
-    { label: "Read.cv", href: "#" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/gianhartmann/" },
+    { label: "Behance", href: "https://www.behance.net/gianhartmann" },
+    { label: "GitHub", href: "https://github.com/gianhartmann" },
   ],
 };

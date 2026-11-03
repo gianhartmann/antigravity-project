@@ -72,9 +72,15 @@ export interface Translations {
     approachBody: string;
     backgroundTitle: string;
     backgroundBody: string;
+    techTitle: string;
+    techBody: string;
     capabilitiesHeadline: string;
-    capabilitiesLabel: string;
+    capabilitiesLabel?: string;
     capabilities: string[];
+    capabilityGroups: {
+      category: string;
+      skills: string[];
+    }[];
     contactHeadline: string;
     contactDescription: string;
     socialsLabel: string;

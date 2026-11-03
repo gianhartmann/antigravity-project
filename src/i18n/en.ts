@@ -13,7 +13,7 @@ export const en: Translations = {
     headlineAccent: "bridge the gap",
     headlineSuffix: "between users and technology.",
     description:
-      "Currently leading design systems at a global fintech startup, focusing on human-centric complexity.",
+      "My journey is shaped by the intersection of design, technology, and entrepreneurship. Along the way, I've worked with startups, led design initiatives, participated in innovation projects, and collaborated with people and teams to build new ideas.",
   },
   featured: {
     title: "Nexus: Simplifying Wealth Management",
@@ -65,25 +65,65 @@ export const en: Translations = {
   },
   about: {
     headline: "The Story Behind The Craft.",
-    subtitle: "Designer & Researcher",
+    subtitle: "Product Designer & UI/UX Designer",
     quote:
-      '"I believe that the most powerful digital experiences aren\'t just seen—they are felt. My work sits at the intersection of human psychology and technical precision."',
+      '"My work begins before the first screen. I like to understand the problem, question what seems obvious, and find ways to transform complex ideas into clear, functional, and meaningful digital experiences."',
     approachTitle: "The Approach",
     approachBody:
-      "Design is often mistaken for decoration. To me, it's a rigorous process of interrogation. I peel back the layers of business requirements to find the core human need that hasn't been met yet.",
+      "To me, design doesn't begin with the interface. It begins with understanding.\n\nBefore thinking about shapes, colors, or components, I seek to understand the context, the people involved, and the problem that needs solving. I believe great solutions emerge from combining research, critical thinking, visual repertoire, and an understanding of technological possibilities.\n\nI enjoy navigating different perspectives: understanding user needs, considering business objectives, and working closely with those who turn ideas into reality. That intersection is where design gains its true power.\n\nI value the rationale behind a decision as much as the quality of its execution. After all, a great experience must make sense structurally, work seamlessly in practice, and be thoughtfully resolved down to every detail.",
     backgroundTitle: "The Background",
     backgroundBody:
-      'With a decade of experience across fintech, healthcare, and luxury e-commerce, I\'ve learned that complexity is the enemy of delight. I strive to create "silent" interfaces that guide users with effortless clarity.',
-    capabilitiesHeadline: "Equipped with a diverse toolkit.",
-    capabilitiesLabel: "Capabilities 2024",
+      "My journey is shaped by the intersection of design, technology, and entrepreneurship.\n\nOver the past years, I've worked across startups, tech companies, and diverse markets. As co-founder and Head of Design of a tech startup, I participated not only in building products, but also in decisions surrounding business, strategy, and growth.\n\nI've also had the opportunity to work on national and international projects, crafting digital experiences for industries such as healthcare, fintech, sustainability, and aviation management.\n\nEach project brought a fresh perspective and expanded my mindset. Today, I bring forward a holistic vision that unites user experience, visual craftsmanship, technology, and a broader understanding of design's role in building enduring products.",
+    techTitle: "Between Design & Technology",
+    techBody:
+      "Technology is transforming how we conceive, experiment with, and build products. I have followed this shift closely, especially with the emergence of artificial intelligence tools in the design workflow.\n\nI explore tools like Claude and integrations via MCP to bridge design and engineering, accelerate Design System development, iterate on solutions, and expand prototyping capabilities.\n\nI don't see these tools merely as shortcuts, but as new frontiers of work. My focus is on understanding where they truly deliver value, how they enhance workflows, and how they free up time for what demands human judgment: investigating, questioning, and making sound decisions.",
+    capabilitiesHeadline: "What I Bring to Every Project",
+    capabilitiesLabel: "",
     capabilities: [
+      "Product Discovery",
       "UX Research",
-      "Visual Design",
-      "Motion Prototyping",
+      "Information Architecture",
+      "User Journeys",
+      "Usability Testing",
+      "UI Design Web & Mobile",
       "Design Systems",
-      "User Testing",
-      "Brand Identity",
-      "Strategy",
+      "High-Fidelity Prototyping",
+      "Digital Accessibility",
+      "Figma",
+      "Claude & MCP",
+      "AI Applied to Design",
+    ],
+    capabilityGroups: [
+      {
+        category: "Product & UX Design",
+        skills: [
+          "Product Discovery & Problem Definition",
+          "UX Research & Desk Research",
+          "Information Architecture",
+          "User Journeys & Navigation Flows",
+          "Usability Testing & Hypothesis Validation",
+        ],
+      },
+      {
+        category: "Interface & Visual Design",
+        skills: [
+          "UI Design for Web & Mobile",
+          "Design Systems & Component Libraries",
+          "High-Fidelity Prototyping",
+          "Visual Hierarchy, Typography & Layout",
+          "Responsive Design & Digital Accessibility",
+        ],
+      },
+      {
+        category: "Technology & Experimentation",
+        skills: [
+          "Figma & Prototyping Tools",
+          "Claude & MCP Integrations",
+          "AI Applied to Design Workflows",
+          "Engineering Handoff & Collaboration",
+          "No-Code Tools & Web Technologies",
+        ],
+      },
     ],
     contactHeadline: "Get in Touch.",
     contactDescription:
@@ -143,7 +183,7 @@ export const en: Translations = {
     nextProjectTitle: "Fluid Motion Systems",
   },
   footer: {
-    brand: "The Editorial Portfolio",
-    copyright: "© 2024 The Curated Gallery",
+    brand: "Gian Hartmann",
+    copyright: "Made of curiosity & coffee",
   },
 };

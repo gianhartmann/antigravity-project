@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Copy, Check } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Footer } from "@/components/Footer";
@@ -12,7 +13,21 @@ import {
 } from "@/data/mockData";
 
 const WorkPage: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    navigator.clipboard.writeText(contactContent.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const copyLabel =
+    locale === "pt-BR"
+      ? copied ? "Email copiado!" : "Copiar email"
+      : locale === "es"
+      ? copied ? "¡Correo copiado!" : "Copiar correo"
+      : copied ? "Email copied!" : "Copy email";
 
   // Build localized case studies using translations for descriptions/categories
   const localizedCaseStudies = caseStudies.map((cs, i) => {
@@ -111,12 +126,27 @@ const WorkPage: React.FC = () => {
             </span>{" "}
             {t.work.workCtaTogether}
           </h2>
-          <a
-            href={`mailto:${contactContent.email}`}
-            className="font-headline font-bold text-lg md:text-xl text-on-surface underline underline-offset-4 decoration-2 hover:text-primary transition-colors"
-          >
-            {contactContent.email}
-          </a>
+          <div className="inline-flex items-center justify-center gap-3">
+            <a
+              href={`mailto:${contactContent.email}`}
+              className="font-headline font-bold text-lg md:text-xl text-on-surface underline underline-offset-4 decoration-2 hover:text-primary transition-colors"
+            >
+              {contactContent.email}
+            </a>
+            <button
+              type="button"
+              onClick={handleCopyEmail}
+              aria-label={copyLabel}
+              title={copyLabel}
+              className="relative inline-flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-surface-container-low hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            >
+              {copied ? (
+                <Check className="w-4 h-4 text-primary transition-all duration-200 scale-110" />
+              ) : (
+                <Copy className="w-4 h-4 text-on-surface-variant transition-all duration-200" />
+              )}
+            </button>
+          </div>
         </section>
       </main>
 

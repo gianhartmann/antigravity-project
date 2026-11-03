@@ -15,10 +15,10 @@ export const Navbar: React.FC<Readonly<NavbarProps>> = ({ className = "" }) => {
   const { t } = useLanguage();
 
   const navLinks = [
-    { label: t.nav.work, href: "/work" },
-    { label: t.nav.about, href: "/about" },
-    { label: t.nav.contact, href: "/about#contact" },
-    { label: t.nav.resume, href: "#" },
+    { label: t.nav.work, href: "/work", external: false },
+    { label: t.nav.about, href: "/about", external: false },
+    { label: t.nav.contact, href: "/about#contact", external: false },
+    { label: t.nav.resume, href: "/curriculo.pdf", external: true },
   ];
 
   return (
@@ -35,6 +35,19 @@ export const Navbar: React.FC<Readonly<NavbarProps>> = ({ className = "" }) => {
         <div className="hidden md:flex items-center gap-8 lg:gap-10">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.href;
+            if (link.external) {
+              return (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-headline font-bold tracking-tight uppercase text-xs text-on-surface hover:text-primary transition-all duration-300"
+                >
+                  {link.label}
+                </a>
+              );
+            }
             return (
               <Link
                 key={link.href}
@@ -75,6 +88,20 @@ export const Navbar: React.FC<Readonly<NavbarProps>> = ({ className = "" }) => {
               <nav className="flex flex-col gap-6 mt-12 px-2">
                 {navLinks.map((link) => {
                   const isActive = location.pathname === link.href;
+                  if (link.external) {
+                    return (
+                      <a
+                        key={link.label}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setOpen(false)}
+                        className="font-headline font-bold uppercase text-sm tracking-wide text-on-surface hover:text-primary transition-colors"
+                      >
+                        {link.label}
+                      </a>
+                    );
+                  }
                   return (
                     <Link
                       key={link.href}

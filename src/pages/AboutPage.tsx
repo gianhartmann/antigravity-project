@@ -48,7 +48,7 @@ const AboutPage: React.FC = () => {
                   <img
                     alt={aboutHero.portraitAlt}
                     src={aboutHero.portrait}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-all duration-700 scale-100 group-hover:scale-105"
                   />
                 </div>
                 <div className="mt-8 md:mt-12 max-w-xl">
@@ -59,23 +59,37 @@ const AboutPage: React.FC = () => {
               </div>
 
               {/* Narrative Bio Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
-                <div className="space-y-4 md:space-y-6">
-                  <h3 className="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">
-                    {t.about.approachTitle}
-                  </h3>
-                  <p className="text-lg md:text-xl leading-relaxed text-on-surface-variant font-body">
-                    {t.about.approachBody}
-                  </p>
+              <div className="space-y-12 md:space-y-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+                  <div className="space-y-4 md:space-y-6">
+                    <h3 className="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">
+                      {t.about.approachTitle}
+                    </h3>
+                    <div className="text-base md:text-lg leading-relaxed text-on-surface-variant font-body whitespace-pre-line space-y-4">
+                      {t.about.approachBody}
+                    </div>
+                  </div>
+                  <div className="space-y-4 md:space-y-6">
+                    <h3 className="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">
+                      {t.about.backgroundTitle}
+                    </h3>
+                    <div className="text-base md:text-lg leading-relaxed text-on-surface-variant font-body whitespace-pre-line space-y-4">
+                      {t.about.backgroundBody}
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-4 md:space-y-6">
-                  <h3 className="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">
-                    {t.about.backgroundTitle}
-                  </h3>
-                  <p className="text-lg md:text-xl leading-relaxed text-on-surface-variant font-body">
-                    {t.about.backgroundBody}
-                  </p>
-                </div>
+
+                {/* Entre design e tecnologia */}
+                {t.about.techTitle && (
+                  <div className="pt-10 border-t border-outline-variant/15 space-y-4 md:space-y-6">
+                    <h3 className="font-headline font-bold text-lg uppercase tracking-tight text-on-surface">
+                      {t.about.techTitle}
+                    </h3>
+                    <div className="text-base md:text-lg leading-relaxed text-on-surface-variant font-body whitespace-pre-line max-w-3xl space-y-4">
+                      {t.about.techBody}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -84,19 +98,44 @@ const AboutPage: React.FC = () => {
         {/* ─── Process Chips / Expertise Area (Bento-lite) ─── */}
         <section className="w-full bg-surface-container-low py-20 md:py-32 mb-24 md:mb-40 overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 md:px-8">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6 md:gap-8">
-              <h2 className="font-headline font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tighter text-on-surface max-w-md leading-tight">
+            <div className="mb-12 md:mb-16">
+              <h2 className="font-headline font-extrabold text-3xl md:text-4xl lg:text-5xl tracking-tighter text-on-surface max-w-xl leading-tight">
                 {t.about.capabilitiesHeadline}
               </h2>
-              <span className="font-label text-xs uppercase tracking-widest text-outline font-bold">
-                {t.about.capabilitiesLabel}
-              </span>
             </div>
-            <div className="flex flex-wrap gap-3 md:gap-4">
-              {t.about.capabilities.map((cap) => (
-                <ProcessChip key={cap} label={cap} />
-              ))}
-            </div>
+            {t.about.capabilityGroups && t.about.capabilityGroups.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+                {t.about.capabilityGroups.map((group) => (
+                  <div
+                    key={group.category}
+                    className="p-6 md:p-8 rounded-2xl bg-surface-container/50 border border-outline-variant/15 flex flex-col justify-between"
+                  >
+                    <div>
+                      <h3 className="font-headline font-bold text-base md:text-lg uppercase tracking-wider text-primary mb-6">
+                        {group.category}
+                      </h3>
+                      <ul className="space-y-3">
+                        {group.skills.map((skill) => (
+                          <li
+                            key={skill}
+                            className="flex items-start gap-3 font-body text-sm md:text-base text-on-surface leading-snug"
+                          >
+                            <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0 mt-2" />
+                            <span>{skill}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-wrap gap-3 md:gap-4">
+                {t.about.capabilities.map((cap) => (
+                  <ProcessChip key={cap} label={cap} />
+                ))}
+              </div>
+            )}
           </div>
         </section>
 
@@ -126,6 +165,8 @@ const AboutPage: React.FC = () => {
                     <a
                       key={social.label}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="font-headline font-bold text-sm uppercase tracking-tight text-primary hover:opacity-70 transition-opacity"
                     >
                       {social.label}

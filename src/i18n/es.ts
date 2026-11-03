@@ -13,7 +13,7 @@ export const es: Translations = {
     headlineAccent: "conectan",
     headlineSuffix: "usuarios y tecnología.",
     description:
-      "Actualmente liderando sistemas de diseño en una startup fintech global, con foco en la complejidad centrada en el ser humano.",
+      "Mi trayectoria está marcada por el encuentro entre diseño, tecnología y emprendimiento. A lo largo del camino, he pasado por startups, liderado iniciativas de diseño, participado en proyectos de innovación y colaborado con personas y equipos en la construcción de nuevas ideas.",
   },
   featured: {
     title: "Nexus: Simplificando la Gestión Patrimonial",
@@ -65,25 +65,65 @@ export const es: Translations = {
   },
   about: {
     headline: "La Historia Detrás del Oficio.",
-    subtitle: "Diseñador & Investigador",
+    subtitle: "Product Designer & UI/UX Designer",
     quote:
-      '"Creo que las experiencias digitales más poderosas no solo se ven, se sienten. Mi trabajo se encuentra en la intersección entre la psicología humana y la precisión técnica."',
+      '"Mi trabajo comienza antes de la primera pantalla. Me gusta entender el problema, cuestionar lo que parece obvio y encontrar formas de transformar ideas complejas en experiencias digitales claras, funcionales y significativas."',
     approachTitle: "El Enfoque",
     approachBody:
-      "El diseño a menudo se confunde con la decoración. Para mí, es un proceso riguroso de interrogación. Desmonto las capas de los requisitos de negocio para encontrar la necesidad humana fundamental que aún no ha sido satisfecha.",
+      "Para mí, el diseño no comienza en la interfaz. Comienza en la comprensión.\n\nAntes de pensar en formas, colores o componentes, busco entender el contexto, a las personas involucradas y el problema a resolver. Creo que las mejores soluciones surgen de la combinación entre investigación, pensamiento crítico, repertorio visual y comprensión de las posibilidades tecnológicas.\n\nMe gusta transitar entre diferentes perspectivas: entender las necesidades de los usuarios, considerar los objetivos del negocio y trabajar mano a mano con quienes hacen realidad las ideas. Es en ese encuentro donde el diseño cobra fuerza.\n\nValoro tanto el razonamiento detrás de cada decisión como la calidad de su ejecución. Al fin y al cabo, una buena experiencia debe tener sentido en su estructura, funcionar en la práctica y estar bien resuelta en cada detalle.",
     backgroundTitle: "La Trayectoria",
     backgroundBody:
-      'Con una década de experiencia en fintech, salud y e-commerce de lujo, he aprendido que la complejidad es la enemiga del deleite. Busco crear interfaces "silenciosas" que guíen a los usuarios con una claridad sin esfuerzo.',
-    capabilitiesHeadline: "Equipado con un conjunto diverso de herramientas.",
-    capabilitiesLabel: "Competencias 2024",
+      "Mi trayectoria está marcada por el encuentro entre diseño, tecnología y emprendimiento.\n\nA lo largo de los últimos años, he pasado por startups, empresas tecnológicas y proyectos de diversos mercados. Fui cofundador y Head of Design de una startup tecnológica, experiencia que me llevó a participar no solo en la construcción de productos, sino también en decisiones estratégicas de negocio y crecimiento.\n\nTambién tuve la oportunidad de trabajar en proyectos nacionales e internacionales, desarrollando experiencias para sectores como salud y bienestar, finanzas, sostenibilidad y gestión aeronáutica.\n\nCada proyecto aportó una perspectiva diferente y amplió mi visión. Hoy aporto un enfoque que combina experiencia de usuario, calidad visual, tecnología y una comprensión integral del rol del diseño en la construcción de productos.",
+    techTitle: "Entre Diseño y Tecnología",
+    techBody:
+      "La tecnología está cambiando la forma en que pensamos, experimentamos e construimos productos. He seguido esta evolución de cerca, especialmente con la llegada de herramientas de inteligencia artificial al proceso de diseño.\n\nExploro herramientas como Claude e integraciones mediante MCP para acercar el diseño y el desarrollo, acelerar la creación de Design Systems, experimentar soluciones y ampliar las posibilidades de prototipado.\n\nNo veo estas herramientas solo como atajos, sino como nuevos horizontes de trabajo. Mi interés radica en entender dónde aportan valor real, cómo optimizan procesos y cómo permiten dedicar más tiempo a lo que requiere pensamiento humano: investigar, cuestionar y tomar decisiones acertadas.",
+    capabilitiesHeadline: "Lo que aporto a cada proyecto",
+    capabilitiesLabel: "",
     capabilities: [
-      "Investigación UX",
-      "Diseño Visual",
-      "Prototipado de Motion",
-      "Design Systems",
+      "Product Discovery",
+      "UX Research",
+      "Arquitectura de la Información",
+      "Flujos de Usuario",
       "Pruebas de Usabilidad",
-      "Identidad de Marca",
-      "Estrategia",
+      "UI Design Web & Mobile",
+      "Design Systems",
+      "Prototipado de Alta Fidelidad",
+      "Accesibilidad Digital",
+      "Figma",
+      "Claude & MCP",
+      "IA Aplicada al Diseño",
+    ],
+    capabilityGroups: [
+      {
+        category: "Product & UX Design",
+        skills: [
+          "Product Discovery y definición de problemas",
+          "UX Research y Desk Research",
+          "Arquitectura de la Información",
+          "Jornadas y flujos de navegación",
+          "Pruebas de usabilidad y validación de hipótesis",
+        ],
+      },
+      {
+        category: "Interface & Visual Design",
+        skills: [
+          "UI Design para web e mobile",
+          "Design Systems y librerías de componentes",
+          "Prototipado de alta fidelidad",
+          "Jerarquía visual, tipografía y composición",
+          "Diseño responsivo y accesibilidad digital",
+        ],
+      },
+      {
+        category: "Tecnología & Experimentación",
+        skills: [
+          "Figma y herramientas de prototipado",
+          "Claude e integraciones vía MCP",
+          "IA aplicada al proceso de diseño",
+          "Colaboración con desarrollo",
+          "Herramientas no-code y tecnologías para produtos digitales",
+        ],
+      },
     ],
     contactHeadline: "Ponte en Contacto.",
     contactDescription:
@@ -143,8 +183,8 @@ export const es: Translations = {
     nextProjectTitle: "Sistemas de Motion Fluido",
   },
   footer: {
-    brand: "El Portafolio Editorial",
-    copyright: "© 2024 La Galería Curada",
+    brand: "Gian Hartmann",
+    copyright: "Hecho de curiosidad & café",
   },
 };
 

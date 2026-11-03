@@ -14,6 +14,7 @@ export const Footer: React.FC<Readonly<FooterProps>> = ({
 }) => {
   const isDark = variant === "dark";
   const { t } = useLanguage();
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer
@@ -21,26 +22,28 @@ export const Footer: React.FC<Readonly<FooterProps>> = ({
         isDark ? "bg-inverse-surface text-inverse-on-surface" : "bg-surface"
       } ${className}`}
     >
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
-        <div className="flex flex-col gap-1 text-center md:text-left">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8">
+        <div className="flex flex-col gap-2 text-left max-w-2xl">
           <Link
             to="/"
-            className={`font-headline font-bold ${
+            className={`font-headline font-bold text-lg md:text-xl ${
               isDark ? "text-surface-dim" : "text-on-surface"
             } hover:opacity-80 transition-opacity`}
           >
             {t.footer.brand}
           </Link>
-          <span className="font-body italic text-base md:text-lg text-on-surface-variant">
-            {t.footer.copyright}
-          </span>
+          <p className="font-body italic text-sm md:text-base text-on-surface-variant leading-relaxed">
+            © {currentYear} Gian Hartmann. {t.footer.copyright}
+          </p>
         </div>
 
-        <div className="flex gap-8 md:gap-12">
+        <div className="flex gap-8 md:gap-12 shrink-0">
           {footerContent.socials.map((social) => (
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className={`font-body italic text-base md:text-lg transition-colors ${
                 isDark
                   ? "text-surface-dim hover:text-inverse-primary"
